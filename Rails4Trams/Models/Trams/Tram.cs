@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rails4Trams.Users
+namespace Rails4Trams
 {
     public class Tram
     {
@@ -25,5 +25,6 @@ namespace Rails4Trams.Users
             this.LijnGebonden = lijnGebonden;
             this.Sectoren = new List<Sector>();
         }
+        public Tram() { };
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rails4Trams.Users
+namespace Rails4Trams
 {
    public class Onderhoud
     {
