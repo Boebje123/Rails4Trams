@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rails4Trams
+{
+    public class Bestuurder : Medewerker
+    {
+        public Bestuurder(string naam, string gebruikersnaam, string wachtwoord, typeMedewerker type) : base(naam, gebruikersnaam, wachtwoord, type)
+        {
+        }
+
+        public Bestuurder(int id, string naam, string gebruikersnaam, string wachtwoord, typeMedewerker type) : base(id, naam, gebruikersnaam, wachtwoord, type)
+        {
+        }
+    }
+}
