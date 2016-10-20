@@ -66,8 +66,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvg12tm21 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.test = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,10 +76,13 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.test = new System.Windows.Forms.Button();
             this.ExposableGroupBox = new System.Windows.Forms.GroupBox();
             this.btnInvoerTramNr = new System.Windows.Forms.Button();
             this.btnTestData = new System.Windows.Forms.Button();
             this.btnResetData = new System.Windows.Forms.Button();
+            this.lbInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg45)).BeginInit();
@@ -389,23 +390,6 @@
             this.dvg12tm21.Size = new System.Drawing.Size(724, 94);
             this.dvg12tm21.TabIndex = 17;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 22);
-            this.textBox1.TabIndex = 18;
-            // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(6, 21);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 19;
-            this.test.Text = "button1";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.Click += new System.EventHandler(this.test_Click);
-            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "12";
@@ -466,6 +450,23 @@
             this.Column21.Name = "Column21";
             this.Column21.Width = 50;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(87, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 22);
+            this.textBox1.TabIndex = 18;
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(6, 21);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(75, 23);
+            this.test.TabIndex = 19;
+            this.test.Text = "button1";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.Click += new System.EventHandler(this.test_Click);
+            // 
             // ExposableGroupBox
             // 
             this.ExposableGroupBox.Controls.Add(this.test);
@@ -504,11 +505,21 @@
             this.btnResetData.Text = "Reset data";
             this.btnResetData.UseVisualStyleBackColor = true;
             // 
+            // lbInfo
+            // 
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Location = new System.Drawing.Point(41, 37);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(46, 17);
+            this.lbInfo.TabIndex = 24;
+            this.lbInfo.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1604, 721);
+            this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.btnResetData);
             this.Controls.Add(this.btnTestData);
             this.Controls.Add(this.btnInvoerTramNr);
@@ -532,6 +543,7 @@
             this.ExposableGroupBox.ResumeLayout(false);
             this.ExposableGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -591,6 +603,7 @@
         private System.Windows.Forms.Button btnInvoerTramNr;
         private System.Windows.Forms.Button btnTestData;
         private System.Windows.Forms.Button btnResetData;
+        private System.Windows.Forms.Label lbInfo;
     }
 }
 

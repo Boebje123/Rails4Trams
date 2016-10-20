@@ -25,6 +25,6 @@ namespace Rails4Trams
             this.LijnGebonden = lijnGebonden;
             this.Sectoren = new List<Sector>();
         }
-        public Tram() { };
+        public Tram() { }
     }
 }

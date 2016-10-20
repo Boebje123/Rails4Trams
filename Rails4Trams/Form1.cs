@@ -11,15 +11,31 @@ using System.Windows.Forms;
 
 namespace Rails4Trams
 {
+   
     public partial class Form1 : Form
     {
-      //  RFID RFID = new RFID();
-
+        //  RFID RFID = new RFID();
+        public string Welkomlabel
+        {
+            get
+            {
+                return this.lbInfo.Text;
+            }
+            set
+            {
+                this.lbInfo.Text = value;
+            }
+        }
         public Form1()
         {
             InitializeComponent();
         }
+        public Form1(Form callingForm)
+        {
 
+            InitializeComponent();
+         //   gebruikerRepo = new GebruikerRepository(new Context.SQLGebruikerContext());
+        }
 
         private void rfid_Error(object sender, EventArgs e)
         {

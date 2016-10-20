@@ -31,7 +31,25 @@ namespace Rails4Trams
 
         public Medewerker GetGebruiker(string inlognaam)
         {
-            throw new NotImplementedException();
+
+            Medewerker ReturnGebruiker = new Medewerker();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM Medewerker Where Inlognaam = @inlognaam";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("inlognaam", inlognaam);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ReturnGebruiker = (CreateGebruikerFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return ReturnGebruiker;
 
         }
 
@@ -64,10 +82,11 @@ namespace Rails4Trams
         {
             throw new NotImplementedException();
         }
+     
         private Medewerker CreateGebruikerFromReader(SqlDataReader reader)
         {
             int medewerkerType;
-            medewerkerType = Convert.ToInt32(reader["id"]);
+            medewerkerType = Convert.ToInt32(reader["functieid"]);
             switch (medewerkerType)
             {
                 case 1:
