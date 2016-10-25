@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Rails4Trams
 {
    
-    public partial class Form1 : Form
+    public partial class BeheerderForm : Form
     {
         //  RFID RFID = new RFID();
         public string Welkomlabel
@@ -26,11 +26,11 @@ namespace Rails4Trams
                 this.lbInfo.Text = value;
             }
         }
-        public Form1()
+        public BeheerderForm()
         {
             InitializeComponent();
         }
-        public Form1(Form callingForm)
+        public BeheerderForm(Form callingForm)
         {
 
             InitializeComponent();

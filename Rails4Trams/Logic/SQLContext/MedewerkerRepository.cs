@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rails4Trams.Logic.SQLContext
+namespace Rails4Trams
 {
     public class MedewerkerRepository
     {

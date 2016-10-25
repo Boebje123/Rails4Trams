@@ -50,41 +50,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\BestuurderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BestuurderForm.Designer.cs">
+      <DependentUpon>BestuurderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Context\Database.cs" />
     <Compile Include="Logic\Context\IMedewerker.cs" />
     <Compile Include="Logic\Context\ITramContext.cs" />
     <Compile Include="Logic\Context\SqlMedewerkerContext.cs" />
     <Compile Include="Logic\Context\SqlTramContext.cs" />
     <Compile Include="Logic\SQLContext\MedewerkerRepository.cs" />
-    <Compile Include="LogIn.cs">
+    <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\SQLContext\TramRepository.cs" />
     <Compile Include="Models\Users\Beheerder.cs" />
     <Compile Include="Models\Users\Bestuurder.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\BeheerderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\BeheerderForm.Designer.cs">
+      <DependentUpon>BeheerderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Users\Medewerker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Trams\Onderhoud.cs" />
-    <Compile Include="Models\Trams\Remise.cs" />
     <Compile Include="Models\Users\Schoonmaker.cs" />
     <Compile Include="Models\Trams\Sector.cs" />
     <Compile Include="Models\Trams\Spoor.cs" />
     <Compile Include="Models\Users\Technicus.cs" />
     <Compile Include="Models\Trams\Tram.cs" />
     <Compile Include="Models\Users\WagenparkBeheerder.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\SchoonmaakForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SchoonmaakForm.Designer.cs">
+      <DependentUpon>SchoonmaakForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TechnicusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TechnicusForm.Designer.cs">
+      <DependentUpon>TechnicusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WagenparkBeheerderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WagenparkBeheerderForm.Designer.cs">
+      <DependentUpon>WagenparkBeheerderForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\BeheerderForm.resx">
+      <DependentUpon>BeheerderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -96,6 +120,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\SchoonmaakForm.resx">
+      <DependentUpon>SchoonmaakForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TechnicusForm.resx">
+      <DependentUpon>TechnicusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WagenparkBeheerderForm.resx">
+      <DependentUpon>WagenparkBeheerderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

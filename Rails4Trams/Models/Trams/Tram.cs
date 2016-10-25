@@ -8,23 +8,35 @@ namespace Rails4Trams
 {
     public class Tram
     {
-        public enum tramType {Combino,_11g,DubbelKopCombino,_12g,Opleidingstram }
-        public enum status {Defect,Schoonmaak,Dienst,Remise }
-
-        public tramType Tramtype { get; set; }
+       
+        public int id { get;private set; }
+  
         public int Lengte { get; set; }
-        public status Status { get; set; }
+        public string Type { get; set; }
+        public string Status { get; set; }
         public bool LijnGebonden { get; set; }
-        private List<Sector> Sectoren; 
+        private List<Sector> Sectoren;
 
-        public Tram(tramType tramtype,status status,int lengte,bool lijnGebonden)
+        public Tram(int id,string type,string status,int lengte, bool lijnGebonden)
         {
-            this.Tramtype = tramtype;
+            this.id = id;
+            this.Type = type;
             this.Status = status;
             this.Lengte = lengte;
             this.LijnGebonden = lijnGebonden;
             this.Sectoren = new List<Sector>();
         }
+        public Tram(int lengte,bool lijnGebonden)
+        {      
+            this.Lengte = lengte;
+            this.LijnGebonden = lijnGebonden;
+            this.Sectoren = new List<Sector>();
+        }
         public Tram() { }
+
+        public override string ToString()
+        {
+            return this.id + " " + this.Type + " " + this.Status;
+        }
     }
 }

@@ -11,14 +11,14 @@ namespace Rails4Trams
        public int Lengte { get; set; }
         public int Nummer { get; set; }
         public bool Gereserveerd { get; set; }
-        private List<Sector> Sectoren;
+        private Sector Sector;
 
         public Spoor(int lengte,int nummer,bool gereserveerd)
         {
             this.Lengte = lengte;
             this.Nummer = nummer;
             this.Gereserveerd = gereserveerd;
-            this.Sectoren = new List<Sector>();
+            
         }
         
     }

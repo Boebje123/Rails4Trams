@@ -1,6 +1,6 @@
 ﻿namespace Rails4Trams
 {
-    partial class Form1
+    partial class BeheerderForm
     {
         /// <summary>
         /// Required designer variable.
