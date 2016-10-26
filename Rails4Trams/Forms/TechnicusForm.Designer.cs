@@ -62,6 +62,7 @@
             this.btnKleineDienstAfronden.TabIndex = 2;
             this.btnKleineDienstAfronden.Text = "Kleine dienst afronden";
             this.btnKleineDienstAfronden.UseVisualStyleBackColor = true;
+            this.btnKleineDienstAfronden.Click += new System.EventHandler(this.btnKleineDienstAfronden_Click);
             // 
             // btnGroteDienstAfronden
             // 

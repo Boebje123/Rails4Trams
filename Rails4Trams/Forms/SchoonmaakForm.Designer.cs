@@ -74,6 +74,7 @@
             this.btnAfrondenGrote.TabIndex = 5;
             this.btnAfrondenGrote.Text = "Afronden grote beurt";
             this.btnAfrondenGrote.UseVisualStyleBackColor = true;
+            this.btnAfrondenGrote.Click += new System.EventHandler(this.btnAfrondenGrote_Click);
             // 
             // lbGroot
             // 
@@ -83,6 +84,7 @@
             this.lbGroot.Name = "lbGroot";
             this.lbGroot.Size = new System.Drawing.Size(182, 212);
             this.lbGroot.TabIndex = 6;
+        
             // 
             // label2
             // 

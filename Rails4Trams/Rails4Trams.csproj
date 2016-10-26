@@ -57,10 +57,13 @@
       <DependentUpon>BestuurderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Context\Database.cs" />
+    <Compile Include="Logic\Context\IActiviteitContext.cs" />
     <Compile Include="Logic\Context\IMedewerker.cs" />
     <Compile Include="Logic\Context\ITramContext.cs" />
+    <Compile Include="Logic\Context\SqlActiviteitContext.cs" />
     <Compile Include="Logic\Context\SqlMedewerkerContext.cs" />
     <Compile Include="Logic\Context\SqlTramContext.cs" />
+    <Compile Include="Logic\SQLContext\ActiviteitRepository.cs" />
     <Compile Include="Logic\SQLContext\MedewerkerRepository.cs" />
     <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
@@ -80,7 +83,7 @@
     <Compile Include="Models\Users\Medewerker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\Trams\Onderhoud.cs" />
+    <Compile Include="Models\Trams\Activiteit.cs" />
     <Compile Include="Models\Users\Schoonmaker.cs" />
     <Compile Include="Models\Trams\Sector.cs" />
     <Compile Include="Models\Trams\Spoor.cs" />

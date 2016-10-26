@@ -138,24 +138,24 @@ namespace Rails4Trams
 
         public bool Update(Tram tram)
         {
+            throw new NotImplementedException();
+            //using (SqlConnection connection = Database.Connection)
+            //{
+            //    string query = "UPDATE Tram" +" SET status= @status  "+" WHERE id= @id";
+            //    using (SqlCommand command = new SqlCommand(query, connection))
+            //    {
+            //        command.Parameters.AddWithValue("id", tram.id);
+            //        command.Parameters.AddWithValue("naam", tram.Status);
 
-            using (SqlConnection connection = Database.Connection)
-            {
-                string query = "UPDATE Tram" +" SET status= @status  "+" WHERE id= @id";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("id", tram.id);
-                    command.Parameters.AddWithValue("naam", tram.Status);
 
+            //        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //}
 
-                    if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            //return false;
         }
 
         private Tram CreateTramFromReader(SqlDataReader reader)
