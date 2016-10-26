@@ -32,7 +32,7 @@ namespace Rails4Trams
         }
        public List<Tram> GetTramsKleineDienst()
         {
-            return GetTramsKleineDienst();
+            return tramContext.GetTramsKleineDienst();
         }
        public Tram Insert(Tram tram)
         {
