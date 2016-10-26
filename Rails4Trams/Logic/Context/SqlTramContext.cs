@@ -56,7 +56,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where id = (select a.TramID from activiteit a inner join soortactiviteit sa on a.activiteitid = sa.activiteitid where a.activiteitid = 3 and datediff(m, totaaltijdactiviteit, getdate()) > 6)";
+                string query = "select * from tram where DATEDIFF(m,laatsteGroteServiceBeurt,getdate())>=6 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -76,7 +76,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where id in (select a.TramID from activiteit a inner join soortactiviteit sa on a.activiteitid = sa.activiteitid where a.activiteitid = 1 and datediff(m, totaaltijdactiviteit, getdate()) > 6)";
+                string query = "select * from tram where DATEDIFF(m,laatsteGroteSchoonmaakBeurt,getdate())>=6 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -96,7 +96,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where id in (select a.TramID from activiteit a inner join soortactiviteit sa on a.activiteitid = sa.activiteitid where a.activiteitid = 4 and datediff(m, totaaltijdactiviteit, getdate()) > 3)";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineServiceBeurt,getdate())>=6 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -116,7 +116,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where id in (select a.TramID from activiteit a inner join soortactiviteit sa on a.activiteitid = sa.activiteitid where a.activiteitid = 2 and datediff(m, totaaltijdactiviteit, getdate()) > 3)";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineSchoonmaakBeurt,getdate())>=6 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -138,7 +138,24 @@ namespace Rails4Trams
 
         public bool Update(Tram tram)
         {
-            throw new NotImplementedException();
+
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Tram" +" SET status= @status  "+" WHERE id= @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", tram.id);
+                    command.Parameters.AddWithValue("naam", tram.Status);
+
+
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private Tram CreateTramFromReader(SqlDataReader reader)
