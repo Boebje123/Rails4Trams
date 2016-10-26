@@ -14,9 +14,9 @@ namespace Rails4Trams
             this.context = context;
         }
 
-        public Activiteit Insert(Activiteit activiteit,Medewerker m,Tram t)
+        public Activiteit Insert(Activiteit activiteit)
         {
-            return context.Insert(activiteit,m,t);
+            return context.Insert(activiteit);
         }
     }
 }

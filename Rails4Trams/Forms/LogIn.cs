@@ -24,13 +24,6 @@ namespace Rails4Trams
             medewerkerRepo = new MedewerkerRepository(new SqlMedewerkerContext());
         }
 
-        private LogIn mainForm = null;
-        public LogIn(Form callingForm)
-        {
-            medewerkerRepo = new MedewerkerRepository(new SqlMedewerkerContext());
-            mainForm = callingForm as LogIn;
-            InitializeComponent();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

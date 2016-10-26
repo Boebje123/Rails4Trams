@@ -8,6 +8,6 @@ namespace Rails4Trams
 {
   public  interface IActiviteitContext
     {
-        Activiteit Insert(Activiteit activiteit,Medewerker m,Tram t);
+        Activiteit Insert(Activiteit activiteit);
     }
 }

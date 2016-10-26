@@ -52,7 +52,7 @@ namespace Rails4Trams
             if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
             {
               Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(3), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
-                activiteitRepo.Insert(a, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
+                activiteitRepo.Insert(a);
             }
             UpdateForm();
         }
@@ -63,11 +63,16 @@ namespace Rails4Trams
             if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
             {
                 Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(6), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
-                activiteitRepo.Insert(a, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
+                activiteitRepo.Insert(a);
             }
             UpdateForm();
         }
 
-        
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn l = new LogIn();
+            l.Show();
+        }
     }
 }

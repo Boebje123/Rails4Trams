@@ -111,6 +111,9 @@
     <EmbeddedResource Include="Forms\BeheerderForm.resx">
       <DependentUpon>BeheerderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BestuurderForm.resx">
+      <DependentUpon>BestuurderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,12 +30,7 @@ namespace Rails4Trams
         {
             InitializeComponent();
         }
-        public BeheerderForm(Form callingForm)
-        {
-
-            InitializeComponent();
-         //   gebruikerRepo = new GebruikerRepository(new Context.SQLGebruikerContext());
-        }
+  
 
         private void rfid_Error(object sender, EventArgs e)
         {
@@ -65,6 +60,13 @@ namespace Rails4Trams
             //btnRFID.Enabled = false;
             //btnRFID.Visible = false;
             //lblRFID.Visible = false;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn l = new LogIn();
+            l.Show();
         }
     }
 }

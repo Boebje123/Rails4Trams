@@ -34,6 +34,7 @@
             this.btnGroteDienstAfronden = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbKleineDienst
@@ -92,11 +93,22 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Grote dienst";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(635, 13);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(91, 43);
+            this.btnLogOut.TabIndex = 6;
+            this.btnLogOut.Text = "Afmelden";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // TechnicusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 407);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGroteDienstAfronden);
@@ -118,5 +130,6 @@
         private System.Windows.Forms.Button btnGroteDienstAfronden;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

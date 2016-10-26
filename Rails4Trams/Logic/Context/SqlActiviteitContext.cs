@@ -9,7 +9,7 @@ namespace Rails4Trams
 {
     public class SqlActiviteitContext : IActiviteitContext
     {
-        public Activiteit Insert(Activiteit activiteit,Medewerker m, Tram t)
+        public Activiteit Insert(Activiteit activiteit)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -17,7 +17,7 @@ namespace Rails4Trams
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("medewerkerid", activiteit.medewerker.Id);
-                    command.Parameters.AddWithValue("Tramid",t.id);
+                    command.Parameters.AddWithValue("Tramid",activiteit.Tram.id);
                     command.Parameters.AddWithValue("eindtijd", activiteit.EindDatum);
                     command.Parameters.AddWithValue("begintijd", activiteit.BeginDatum);
                     command.Parameters.AddWithValue("activiteitid", activiteit.ActiviteitiD);
@@ -33,7 +33,7 @@ namespace Rails4Trams
 
                 }
 
-                activiteit = new Activiteit(activiteit.BeginDatum, activiteit.EindDatum, activiteit.ActiviteitiD,m,t);
+                activiteit = new Activiteit(activiteit.BeginDatum, activiteit.EindDatum, activiteit.ActiviteitiD,activiteit.medewerker,activiteit.Tram);
             }
 
 

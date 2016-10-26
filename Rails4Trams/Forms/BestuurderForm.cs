@@ -16,5 +16,12 @@ namespace Rails4Trams
         {
             InitializeComponent();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn l = new LogIn();
+            l.Show();
+        }
     }
 }
