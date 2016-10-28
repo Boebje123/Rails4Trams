@@ -16,5 +16,6 @@ namespace Rails4Trams
         Tram Insert(Tram tram);
         bool Update(Tram tram);
         Tram GetTram(int id);
+        Tram GetTramWithRFID(string rfid);
     }
 }

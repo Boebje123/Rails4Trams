@@ -46,5 +46,9 @@ namespace Rails4Trams
         {
             return tramContext.GetTram(id);
         }
+        public Tram GetTramWithRFID(string rfid)
+        {
+            return tramContext.GetTramWithRFID(rfid);
+        }
     }
 }
