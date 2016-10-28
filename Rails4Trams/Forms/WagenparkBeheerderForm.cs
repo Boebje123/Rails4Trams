@@ -14,12 +14,13 @@ namespace Rails4Trams
     {
 
         public Medewerker IngelogdeMedewerker { get; set; }
-
+       
+      
         public WagenparkBeheerderForm()
         {
-            InitializeComponent();
+            InitializeComponent();     
         }
-
+      
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -53,15 +54,16 @@ namespace Rails4Trams
         {
             this.Hide();
             SchoonmaakForm s = new SchoonmaakForm();
-            s.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            s.IngelogdeMedewerker = IngelogdeMedewerker;
             s.Show();
         }
 
         private void btnTechSchema_Click(object sender, EventArgs e)
         {
+
             this.Hide();
-            TechnicusForm t = new TechnicusForm();
-            t.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            TechnicusForm t = new TechnicusForm(this.IngelogdeMedewerker);
+        //    t.IngelogdeMedewerker =IngelogdeMedewerker;
             t.Show();
         }
 

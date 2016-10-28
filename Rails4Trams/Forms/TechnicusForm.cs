@@ -16,23 +16,23 @@ namespace Rails4Trams
         private List<Tram> GroteDienst;
         private List<Tram> KleineDienst;
         private ActiviteitRepository activiteitRepo;
-      public Medewerker IngelogdeMedewerker { get; set; }
-        public TechnicusForm()
+        public Medewerker IngelogdeMedewerker { get; set; }
+        public TechnicusForm(Medewerker ingelogdemedewerker)
         {
-         
 
+            this.IngelogdeMedewerker = ingelogdemedewerker;
             InitializeComponent();
             activiteitRepo = new ActiviteitRepository(new SqlActiviteitContext());
             KleineDienst = new List<Tram>();
             GroteDienst = new List<Tram>();
 
-            if (IngelogdeMedewerker is Beheerder)
+            if (IngelogdeMedewerker is WagenparkBeheerder)
             {
-                   btnTerugTechForm.Visible = true;
+                btnTerugTechForm.Visible = true;
             }
 
             UpdateForm();
-
+          
 
 
         }
@@ -51,6 +51,7 @@ namespace Rails4Trams
             {
                 lbKleineDienst.Items.Add(t2);
             }
+      
 
         }
         private void btnGroteDienstAfronden_Click(object sender, EventArgs e)

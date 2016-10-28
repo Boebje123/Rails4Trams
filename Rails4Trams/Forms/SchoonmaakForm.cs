@@ -21,7 +21,6 @@ namespace Rails4Trams
         public SchoonmaakForm()
         {
             InitializeComponent();
-
             KleineBeurt = new List<Tram>();
             GroteBeurt = new List<Tram>();
            

@@ -22,6 +22,7 @@ namespace Rails4Trams
         {
             InitializeComponent();
             medewerkerRepo = new MedewerkerRepository(new SqlMedewerkerContext());
+
         }
 
 
@@ -38,8 +39,8 @@ namespace Rails4Trams
                 }
                 if (InlogGebruiker is Technicus)
                 {
-                    TechnicusForm = new TechnicusForm();
-                    TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
+                    TechnicusForm = new TechnicusForm(InlogGebruiker);
+                 //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
                     TechnicusForm.Show();
                 }
                 if (InlogGebruiker is Schoonmaker)
