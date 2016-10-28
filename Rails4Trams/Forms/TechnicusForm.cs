@@ -26,10 +26,10 @@ namespace Rails4Trams
             KleineDienst = new List<Tram>();
             GroteDienst = new List<Tram>();
 
-            if (IngelogdeMedewerker.Gebruikersnaam == "Jelle1")
-            {
-                btnTerugTechForm.Visible = true;
-            }
+           // if (IngelogdeMedewerker.Gebruikersnaam == "Jelle1")
+           // {
+           ////     btnTerugTechForm.Visible = true;
+           // }
 
             UpdateForm();
 
