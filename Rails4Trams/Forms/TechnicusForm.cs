@@ -98,7 +98,27 @@ namespace Rails4Trams
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Tram tram1 = lbGroteDienst.SelectedItem as Tram;
+            Tram tram2 = lbKleineDienst.SelectedItem as Tram;
+            string status = comboBox1.Text;
+            int i = 0;
+            switch (status)
+            {
+                case "Defect":
+                    i = 1;
+                    break;
+                case "Dienst":
+                    i = 3;
+                    break;
+                case "Remise":
+                    i = 4;
+                    break;
+            }
+            if (i != 0)
+                if(tram2!=null && i != 0)
+                tramRepo.Update(tram2.id, i);
+                if(tram1!=null&& i !=0)
+                tramRepo.Update(tram1.id, i);
         }
     }
 }
