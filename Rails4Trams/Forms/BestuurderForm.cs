@@ -13,13 +13,18 @@ namespace Rails4Trams
     public partial class BestuurderForm : Form
     {
         public Medewerker IngelogdeMedewerker { get; set; }
-
+        private TramRepository tramRepo;
+  
         public BestuurderForm()
         {
-
             InitializeComponent();
+            tramRepo = new TramRepository(new SqlTramContext());
         }
-
+        public void UpdateForm()
+        {
+            //lbTramNr.Text = gettramnr;
+            //lb
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -27,11 +32,15 @@ namespace Rails4Trams
             l.Show();
         }
 
-        private void btnBestFormBack_Click(object sender, EventArgs e)
+        private void tbRFID_KeyDown(object sender, KeyEventArgs e)
         {
-            this.Hide();
-            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
-            l.Show();
+            if(e.KeyCode == Keys.Enter)
+            {
+                
+               Tram t = tramRepo.GetTramWithRFID(tbRFID.Text);
+                if(t != null)
+                lbTramNr.Text = t.id.ToString();
+            }
         }
     }
 }

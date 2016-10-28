@@ -38,9 +38,9 @@ namespace Rails4Trams
         {
             return tramContext.Insert(tram);
         }
-       public bool Update(int id,int status)
+       public bool Update(Tram tram)
         {
-            return tramContext.Update(id,status);
+            return tramContext.Update(tram);
         }
       public  Tram GetTram(int id)
         {

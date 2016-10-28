@@ -14,7 +14,7 @@ namespace Rails4Trams
         List<Tram> GetTramsGroteDienst();
         List<Tram> GetTramsKleineDienst();
         Tram Insert(Tram tram);
-        bool Update(int id, int status);
+        bool Update(Tram tram);
         Tram GetTram(int id);
         Tram GetTramWithRFID(string rfid);
     }
