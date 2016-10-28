@@ -42,5 +42,28 @@ namespace Rails4Trams
                 lbTramNr.Text = t.id.ToString();
             }
         }
+
+        private void btnVerstuur_Click(object sender, EventArgs e)
+        {
+            string status = cbStatus.Text;
+            int i = 0;
+            switch(status)
+            {
+                case "Defect":
+                    i = 1;
+                    break;
+                case "Vervuild":
+                    i = 2;                  
+                    break;     
+                case "Dienst":
+                    i = 3;               
+                    break;
+                case "Remise":
+                    i = 4;           
+                    break;
+            }
+            if(i != 0)
+            tramRepo.Update(Convert.ToInt32(tbID.Text), i);
+        }
     }
 }

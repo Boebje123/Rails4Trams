@@ -38,8 +38,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVerstuur = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -116,8 +116,8 @@
             // 
             this.groupBox1.Controls.Add(this.btnVerstuur);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cbStatus);
+            this.groupBox1.Controls.Add(this.tbID);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(437, 29);
             this.groupBox1.Name = "groupBox1";
@@ -133,6 +133,7 @@
             this.btnVerstuur.TabIndex = 7;
             this.btnVerstuur.Text = "Versturen";
             this.btnVerstuur.UseVisualStyleBackColor = true;
+            this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
             // label4
             // 
@@ -143,24 +144,25 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Status";
             // 
-            // comboBox1
+            // cbStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Normaal",
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
             "Defect",
-            "Vervuild"});
-            this.comboBox1.Location = new System.Drawing.Point(115, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 5;
+            "Vervuild",
+            "Dienst",
+            "Remise"});
+            this.cbStatus.Location = new System.Drawing.Point(115, 73);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(121, 24);
+            this.cbStatus.TabIndex = 5;
             // 
-            // textBox1
+            // tbID
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 4;
+            this.tbID.Location = new System.Drawing.Point(115, 27);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(100, 22);
+            this.tbID.TabIndex = 4;
             // 
             // label5
             // 
@@ -235,8 +237,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerstuur;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
