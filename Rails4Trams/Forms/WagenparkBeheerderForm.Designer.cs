@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 418);
+            this.ClientSize = new System.Drawing.Size(813, 422);
             this.Controls.Add(this.btnLogOut);
             this.Name = "WagenparkBeheerderForm";
             this.Text = "WagenparkBeheerderForm";
