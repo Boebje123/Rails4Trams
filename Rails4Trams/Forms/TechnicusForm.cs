@@ -26,10 +26,10 @@ namespace Rails4Trams
             KleineDienst = new List<Tram>();
             GroteDienst = new List<Tram>();
 
-           // if (IngelogdeMedewerker.Gebruikersnaam == "Jelle1")
-           // {
-           ////     btnTerugTechForm.Visible = true;
-           // }
+            if (IngelogdeMedewerker is Beheerder)
+            {
+                   btnTerugTechForm.Visible = true;
+            }
 
             UpdateForm();
 
@@ -85,6 +85,14 @@ namespace Rails4Trams
             this.Hide();
             WagenparkBeheerderForm l = new WagenparkBeheerderForm();
             l.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WagenparkBeheerderForm w = new WagenparkBeheerderForm();
+            w.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            this.Hide();
+            w.Show();
         }
     }
 }

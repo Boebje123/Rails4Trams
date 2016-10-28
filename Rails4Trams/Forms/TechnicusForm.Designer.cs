@@ -38,6 +38,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnTerugTechForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbKleineDienst
@@ -136,11 +137,23 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Status";
             // 
+            // btnTerugTechForm
+            // 
+            this.btnTerugTechForm.Location = new System.Drawing.Point(650, 319);
+            this.btnTerugTechForm.Name = "btnTerugTechForm";
+            this.btnTerugTechForm.Size = new System.Drawing.Size(75, 23);
+            this.btnTerugTechForm.TabIndex = 10;
+            this.btnTerugTechForm.Text = "admin";
+            this.btnTerugTechForm.UseVisualStyleBackColor = true;
+            this.btnTerugTechForm.Visible = false;
+            this.btnTerugTechForm.Click += new System.EventHandler(this.button2_Click);
+            // 
             // TechnicusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 407);
+            this.Controls.Add(this.btnTerugTechForm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
@@ -170,5 +183,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTerugTechForm;
     }
 }
