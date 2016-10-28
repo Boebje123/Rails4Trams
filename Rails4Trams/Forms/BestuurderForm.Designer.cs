@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnBestFormBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogOut
@@ -41,11 +42,23 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnBestFormBack
+            // 
+            this.btnBestFormBack.Location = new System.Drawing.Point(195, 53);
+            this.btnBestFormBack.Name = "btnBestFormBack";
+            this.btnBestFormBack.Size = new System.Drawing.Size(82, 34);
+            this.btnBestFormBack.TabIndex = 1;
+            this.btnBestFormBack.Text = "Terug";
+            this.btnBestFormBack.UseVisualStyleBackColor = true;
+            this.btnBestFormBack.Visible = false;
+            this.btnBestFormBack.Click += new System.EventHandler(this.btnBestFormBack_Click);
+            // 
             // BestuurderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.btnBestFormBack);
             this.Controls.Add(this.btnLogOut);
             this.Name = "BestuurderForm";
             this.Text = "BestuurderForm";
@@ -56,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnBestFormBack;
     }
 }

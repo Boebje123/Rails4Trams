@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnTerugTechForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbKleineDienst
@@ -103,11 +104,23 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnTerugTechForm
+            // 
+            this.btnTerugTechForm.Location = new System.Drawing.Point(635, 62);
+            this.btnTerugTechForm.Name = "btnTerugTechForm";
+            this.btnTerugTechForm.Size = new System.Drawing.Size(91, 43);
+            this.btnTerugTechForm.TabIndex = 7;
+            this.btnTerugTechForm.Text = "Terug";
+            this.btnTerugTechForm.UseVisualStyleBackColor = true;
+            this.btnTerugTechForm.Visible = false;
+            this.btnTerugTechForm.Click += new System.EventHandler(this.btnTerugTechForm_Click);
+            // 
             // TechnicusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 407);
+            this.Controls.Add(this.btnTerugTechForm);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,5 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnTerugTechForm;
     }
 }

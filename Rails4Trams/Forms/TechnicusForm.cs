@@ -19,12 +19,21 @@ namespace Rails4Trams
       public Medewerker IngelogdeMedewerker { get; set; }
         public TechnicusForm()
         {
-          
+         
+
             InitializeComponent();
             activiteitRepo = new ActiviteitRepository(new SqlActiviteitContext());
             KleineDienst = new List<Tram>();
             GroteDienst = new List<Tram>();
+
+            if (IngelogdeMedewerker.Gebruikersnaam == "Jelle1")
+            {
+                btnTerugTechForm.Visible = true;
+            }
+
             UpdateForm();
+
+
 
         }
         public void UpdateForm()
@@ -71,6 +80,11 @@ namespace Rails4Trams
             l.Show();
         }
 
-      
+        private void btnTerugTechForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
+            l.Show();
+        }
     }
 }

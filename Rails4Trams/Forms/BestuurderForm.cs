@@ -14,6 +14,7 @@ namespace Rails4Trams
     {
         public BestuurderForm()
         {
+
             InitializeComponent();
         }
 
@@ -21,6 +22,13 @@ namespace Rails4Trams
         {
             this.Hide();
             LogIn l = new LogIn();
+            l.Show();
+        }
+
+        private void btnBestFormBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
             l.Show();
         }
     }
