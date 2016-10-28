@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVeranderStatus = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTerugTechForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -119,14 +119,15 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
             // 
-            // button1
+            // btnVeranderStatus
             // 
-            this.button1.Location = new System.Drawing.Point(333, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 49);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Verander status";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnVeranderStatus.Location = new System.Drawing.Point(333, 184);
+            this.btnVeranderStatus.Name = "btnVeranderStatus";
+            this.btnVeranderStatus.Size = new System.Drawing.Size(75, 49);
+            this.btnVeranderStatus.TabIndex = 8;
+            this.btnVeranderStatus.Text = "Verander status";
+            this.btnVeranderStatus.UseVisualStyleBackColor = true;
+            this.btnVeranderStatus.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -155,7 +156,7 @@
             this.ClientSize = new System.Drawing.Size(836, 407);
             this.Controls.Add(this.btnTerugTechForm);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVeranderStatus);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label2);
@@ -181,7 +182,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVeranderStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTerugTechForm;
     }
