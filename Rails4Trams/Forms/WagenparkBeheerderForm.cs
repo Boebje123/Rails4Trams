@@ -12,6 +12,9 @@ namespace Rails4Trams
 {
     public partial class WagenparkBeheerderForm : Form
     {
+
+        public Medewerker IngelogdeMedewerker { get; set; }
+
         public WagenparkBeheerderForm()
         {
             InitializeComponent();
@@ -22,6 +25,46 @@ namespace Rails4Trams
             this.Hide();
             LogIn l = new LogIn();
             l.Show();
+        }
+
+        private void btnGebBehe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOverzichtTrams_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOverzichtSporen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBestuurSchema_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BestuurderForm b = new BestuurderForm();
+            b.Show();
+        }
+
+        private void btnSchoonmaakScheema_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTechSchema_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TechnicusForm t = new TechnicusForm();
+            t.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            t.Show();
+        }
+
+        private void btnRemiseBeheSchema_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

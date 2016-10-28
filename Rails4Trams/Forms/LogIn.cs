@@ -51,6 +51,7 @@ namespace Rails4Trams
                 if (InlogGebruiker is WagenparkBeheerder)
                 {
                     WagenForm = new WagenparkBeheerderForm();
+                    WagenForm.IngelogdeMedewerker = InlogGebruiker;
                     WagenForm.Show();
                 }
                 if (InlogGebruiker is Bestuurder)
