@@ -12,6 +12,8 @@ namespace Rails4Trams
 {
     public partial class BestuurderForm : Form
     {
+        public Medewerker IngelogdeMedewerker { get; set; }
+
         public BestuurderForm()
         {
 

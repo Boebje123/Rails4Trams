@@ -58,7 +58,7 @@ namespace Rails4Trams
         {
             this.Hide();
             TechnicusForm t = new TechnicusForm();
-            this.IngelogdeMedewerker = t.IngelogdeMedewerker;
+            t.IngelogdeMedewerker = this.IngelogdeMedewerker;
             t.Show();
         }
 

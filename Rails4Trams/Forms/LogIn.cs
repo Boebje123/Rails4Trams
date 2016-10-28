@@ -57,6 +57,7 @@ namespace Rails4Trams
                 if (InlogGebruiker is Bestuurder)
                 {
                     BestuurderForm = new BestuurderForm();
+                    BestuurderForm.IngelogdeMedewerker = InlogGebruiker;
                     BestuurderForm.Show();
                 }
                 this.Hide();

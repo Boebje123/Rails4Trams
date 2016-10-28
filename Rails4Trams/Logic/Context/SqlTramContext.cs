@@ -76,7 +76,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where DATEDIFF(m,laatsteGroteSchoonmaakBeurt,getdate())>=6 ";
+                string query = "select * from tram where DATEDIFF(m,laatsteGroteSchoonmaakBeurt,getdate())>=3 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -96,7 +96,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where DATEDIFF(m,laatsteKleineServiceBeurt,getdate())>=6 ";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineServiceBeurt,getdate())>=3 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -116,7 +116,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where DATEDIFF(m,laatsteKleineSchoonmaakBeurt,getdate())>=6 ";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineSchoonmaakBeurt,getdate())>=1 ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -131,31 +131,53 @@ namespace Rails4Trams
             return result;
         }
 
+        public Tram GetTramWithRFID(string rfid)
+        {
+            Tram ReturnTram = new Tram();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM tram Where  rfid =@rfid";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("rfid", rfid);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ReturnTram = (CreateTramFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return ReturnTram;
+        }
+
         public Tram Insert(Tram tram)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Tram tram)
+        public bool Update(int id,int status)
         {
-            throw new NotImplementedException();
-            //using (SqlConnection connection = Database.Connection)
-            //{
-            //    string query = "UPDATE Tram" +" SET status= @status  "+" WHERE id= @id";
-            //    using (SqlCommand command = new SqlCommand(query, connection))
-            //    {
-            //        command.Parameters.AddWithValue("id", tram.id);
-            //        command.Parameters.AddWithValue("naam", tram.Status);
+         
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Tram SET status= @status  WHERE id= @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    command.Parameters.AddWithValue("status", status);
 
 
-            //        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
-            //        {
-            //            return true;
-            //        }
-            //    }
-            //}
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
 
-            //return false;
+            return false;
         }
 
         private Tram CreateTramFromReader(SqlDataReader reader)
@@ -200,9 +222,11 @@ namespace Rails4Trams
             }
             return new Tram(Convert.ToInt32(reader["id"]),
                     type,
-                    status,
+                    status,   
                     Convert.ToInt32(reader["lengte"]),
-                    Convert.ToBoolean(reader["Spoorgebonden"]));
+                    Convert.ToBoolean(reader["Spoorgebonden"]),
+                    Convert.ToString(reader["rfid"])
+                    );
         }
     }
 }

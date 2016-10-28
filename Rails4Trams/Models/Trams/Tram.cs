@@ -14,11 +14,13 @@ namespace Rails4Trams
         public int Lengte { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
+        public string Rfid { get; set; }
         public bool LijnGebonden { get; set; }
         private List<Sector> Sectoren;
 
-        public Tram(int id,string type,string status,int lengte, bool lijnGebonden)
+        public Tram(int id,string type,string status,int lengte, bool lijnGebonden,string rfid)
         {
+            this.Rfid = rfid;
             this.id = id;
             this.Type = type;
             this.Status = status;

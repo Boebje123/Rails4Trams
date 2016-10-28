@@ -38,13 +38,17 @@ namespace Rails4Trams
         {
             return tramContext.Insert(tram);
         }
-       public bool Update(Tram tram)
+       public bool Update(int id,int status)
         {
-            return tramContext.Update(tram);
+            return tramContext.Update(id,status);
         }
       public  Tram GetTram(int id)
         {
             return tramContext.GetTram(id);
+        }
+        public Tram GetTramWithRFID(string rfid)
+        {
+            return tramContext.GetTramWithRFID(rfid);
         }
     }
 }
