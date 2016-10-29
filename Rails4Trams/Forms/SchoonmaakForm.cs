@@ -18,12 +18,19 @@ namespace Rails4Trams
         private List<Tram> KleineBeurt;
         public Medewerker IngelogdeMedewerker { get; set; }
      
-        public SchoonmaakForm()
+        public SchoonmaakForm(Medewerker ingelogdemedewerker)
         {
+
+            this.IngelogdeMedewerker = ingelogdemedewerker;
             InitializeComponent();
             KleineBeurt = new List<Tram>();
             GroteBeurt = new List<Tram>();
-           
+
+            if (IngelogdeMedewerker is WagenparkBeheerder)
+            {
+                btnSchoonmaakTerug.Visible = true;
+            }
+
             tramRepo = new TramRepository(new SqlTramContext());
             activiteitRepo = new ActiviteitRepository(new SqlActiviteitContext());
 
@@ -72,6 +79,14 @@ namespace Rails4Trams
             this.Hide();
             LogIn l = new LogIn();
             l.Show();
+        }
+
+        private void btnSchoonmaakTerug_Click(object sender, EventArgs e)
+        {
+            WagenparkBeheerderForm w = new WagenparkBeheerderForm();
+            w.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            this.Hide();
+            w.Show();
         }
     }
 }

@@ -99,7 +99,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(635, 13);
+            this.btnLogOut.Location = new System.Drawing.Point(733, 12);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(91, 43);
             this.btnLogOut.TabIndex = 6;
@@ -140,11 +140,11 @@
             // 
             // btnTerugTechForm
             // 
-            this.btnTerugTechForm.Location = new System.Drawing.Point(650, 319);
+            this.btnTerugTechForm.Location = new System.Drawing.Point(749, 363);
             this.btnTerugTechForm.Name = "btnTerugTechForm";
-            this.btnTerugTechForm.Size = new System.Drawing.Size(75, 23);
+            this.btnTerugTechForm.Size = new System.Drawing.Size(75, 32);
             this.btnTerugTechForm.TabIndex = 10;
-            this.btnTerugTechForm.Text = "admin";
+            this.btnTerugTechForm.Text = "Terug";
             this.btnTerugTechForm.UseVisualStyleBackColor = true;
             this.btnTerugTechForm.Visible = false;
             this.btnTerugTechForm.Click += new System.EventHandler(this.button2_Click);
