@@ -33,7 +33,7 @@ namespace Rails4Trams
                 Medewerker InlogGebruiker = medewerkerRepo.GetGebruiker(textBox1.Text);
                 if(InlogGebruiker is Beheerder)
                 { 
-                        BeheerForm = new BeheerderForm();
+                        BeheerForm = new BeheerderForm(InlogGebruiker);
                         BeheerForm.Welkomlabel = InlogGebruiker.ToString();
                         BeheerForm.Show();                  
                 }
@@ -57,7 +57,7 @@ namespace Rails4Trams
                 }
                 if (InlogGebruiker is Bestuurder)
                 {
-                    BestuurderForm = new BestuurderForm();
+                    BestuurderForm = new BestuurderForm(InlogGebruiker);
                     BestuurderForm.IngelogdeMedewerker = InlogGebruiker;
                     BestuurderForm.Show();
                 }

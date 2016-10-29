@@ -15,11 +15,18 @@ namespace Rails4Trams
         public Medewerker IngelogdeMedewerker { get; set; }
         private TramRepository tramrepo;
 
-        public BestuurderForm()
+        public BestuurderForm(Medewerker ingelogdemedewerker)
         {
+            this.IngelogdeMedewerker = ingelogdemedewerker;
 
             InitializeComponent();
             this.tramrepo =new TramRepository(new SqlTramContext());
+
+            if (IngelogdeMedewerker is WagenparkBeheerder)
+            {
+                btnBestFormBack.Visible = true;
+            }
+
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -31,8 +38,9 @@ namespace Rails4Trams
 
         private void btnBestFormBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
             WagenparkBeheerderForm l = new WagenparkBeheerderForm();
+            l.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            this.Hide();
             l.Show();
         }
 
