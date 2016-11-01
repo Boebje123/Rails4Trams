@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSchoonmaakTerug = new System.Windows.Forms.Button();
+            this.btnSchoonmaaklijstAanvragen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbKlein
@@ -135,11 +136,22 @@
             this.btnSchoonmaakTerug.Visible = false;
             this.btnSchoonmaakTerug.Click += new System.EventHandler(this.btnSchoonmaakTerug_Click);
             // 
+            // btnSchoonmaaklijstAanvragen
+            // 
+            this.btnSchoonmaaklijstAanvragen.Location = new System.Drawing.Point(366, 286);
+            this.btnSchoonmaaklijstAanvragen.Name = "btnSchoonmaaklijstAanvragen";
+            this.btnSchoonmaaklijstAanvragen.Size = new System.Drawing.Size(134, 65);
+            this.btnSchoonmaaklijstAanvragen.TabIndex = 12;
+            this.btnSchoonmaaklijstAanvragen.Text = "Schoonmaaklijst aanvragen";
+            this.btnSchoonmaaklijstAanvragen.UseVisualStyleBackColor = true;
+            this.btnSchoonmaaklijstAanvragen.Click += new System.EventHandler(this.btnSchoonmaaklijstAanvragen_Click);
+            // 
             // SchoonmaakForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 415);
+            this.Controls.Add(this.btnSchoonmaaklijstAanvragen);
             this.Controls.Add(this.btnSchoonmaakTerug);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label4);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnSchoonmaakTerug;
+        private System.Windows.Forms.Button btnSchoonmaaklijstAanvragen;
     }
 }
