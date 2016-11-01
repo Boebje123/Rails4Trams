@@ -28,9 +28,9 @@ namespace Rails4Trams
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (medewerkerRepo.LogIn(textBox1.Text, textBox2.Text))
+            if (medewerkerRepo.LogIn(tbGebruikersnaam.Text, tbWachtwoord.Text))
             {
-                Medewerker InlogGebruiker = medewerkerRepo.GetGebruiker(textBox1.Text);
+                Medewerker InlogGebruiker = medewerkerRepo.GetGebruiker(tbGebruikersnaam.Text);
                 if(InlogGebruiker is Beheerder)
                 { 
                         BeheerForm = new BeheerderForm();
