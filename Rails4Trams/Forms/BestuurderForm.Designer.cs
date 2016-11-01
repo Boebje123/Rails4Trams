@@ -36,16 +36,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVerstuur = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbRFID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnVerstuur = new System.Windows.Forms.Button();
             this.lbTramnr = new System.Windows.Forms.Label();
             this.lbSector = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             lbNaarSpoor = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lbNaarSpoor
+            // 
+            lbNaarSpoor.AutoSize = true;
+            lbNaarSpoor.Location = new System.Drawing.Point(140, 69);
+            lbNaarSpoor.Name = "lbNaarSpoor";
+            lbNaarSpoor.Size = new System.Drawing.Size(0, 17);
+            lbNaarSpoor.TabIndex = 9;
             // 
             // btnLogOut
             // 
@@ -120,40 +129,6 @@
             this.groupBox1.Size = new System.Drawing.Size(299, 165);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(161, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
-            // 
-            // tbRFID
-            // 
-            this.tbRFID.Location = new System.Drawing.Point(381, 243);
-            this.tbRFID.Name = "tbRFID";
-            this.tbRFID.Size = new System.Drawing.Size(100, 22);
-            this.tbRFID.TabIndex = 7;
-            this.tbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbRFID_KeyDown_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Tramnummer";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "status";
             // 
             // btnVerstuur
             // 
@@ -165,6 +140,39 @@
             this.btnVerstuur.UseVisualStyleBackColor = true;
             this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "status";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Tramnummer";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(161, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 6;
+            // 
+            // tbRFID
+            // 
+            this.tbRFID.Location = new System.Drawing.Point(274, 243);
+            this.tbRFID.Name = "tbRFID";
+            this.tbRFID.Size = new System.Drawing.Size(207, 22);
+            this.tbRFID.TabIndex = 7;
+            this.tbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbRFID_KeyDown_1);
+            // 
             // lbTramnr
             // 
             this.lbTramnr.AutoSize = true;
@@ -172,14 +180,6 @@
             this.lbTramnr.Name = "lbTramnr";
             this.lbTramnr.Size = new System.Drawing.Size(0, 17);
             this.lbTramnr.TabIndex = 8;
-            // 
-            // lbNaarSpoor
-            // 
-            lbNaarSpoor.AutoSize = true;
-            lbNaarSpoor.Location = new System.Drawing.Point(140, 69);
-            lbNaarSpoor.Name = "lbNaarSpoor";
-            lbNaarSpoor.Size = new System.Drawing.Size(0, 17);
-            lbNaarSpoor.TabIndex = 9;
             // 
             // lbSector
             // 
@@ -189,11 +189,21 @@
             this.lbSector.Size = new System.Drawing.Size(0, 17);
             this.lbSector.TabIndex = 10;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(140, 243);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "rfid";
+            // 
             // BestuurderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 402);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSector);
             this.Controls.Add(lbNaarSpoor);
             this.Controls.Add(this.lbTramnr);
@@ -229,5 +239,6 @@
         private System.Windows.Forms.Button btnVerstuur;
         private System.Windows.Forms.Label lbTramnr;
         private System.Windows.Forms.Label lbSector;
+        private System.Windows.Forms.Label label6;
     }
 }

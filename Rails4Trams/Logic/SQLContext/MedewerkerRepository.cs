@@ -33,5 +33,9 @@ namespace Rails4Trams
         {
             return context.GetGebruiker(inlognaam);
         }
+        public Medewerker GetGebruiker(int id)
+        {
+            return context.GetGebruiker(id);
+        }
     }
 }

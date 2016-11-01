@@ -9,5 +9,6 @@ namespace Rails4Trams
   public  interface IActiviteitContext
     {
         Activiteit Insert(Activiteit activiteit);
+        List<Activiteit> VraagSchoonmaaklijstAan();
     }
 }

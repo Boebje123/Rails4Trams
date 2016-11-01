@@ -52,7 +52,29 @@ namespace Rails4Trams
             return ReturnGebruiker;
 
         }
+        public Medewerker GetGebruiker(int id)
+        {
 
+            Medewerker ReturnGebruiker = new Medewerker();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM Medewerker Where id = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ReturnGebruiker = (CreateGebruikerFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return ReturnGebruiker;
+
+        }
         public Medewerker Insert(Medewerker gebruiker)
         {
             throw new NotImplementedException();

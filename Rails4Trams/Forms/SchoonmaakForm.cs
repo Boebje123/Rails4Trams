@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,51 @@ namespace Rails4Trams
             this.Hide();
             LogIn l = new LogIn();
             l.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+         {
+            List<Activiteit> schoonmaaklijst = activiteitRepo.VraagSchoonmaaklijstAan();
+            MessageBox.Show(schoonmaaklijst.Count.ToString());
+            SaveFileDialog file;        // koppeling met bestand
+      
+            string actitiveit = "";
+
+            try
+            {
+                file = new SaveFileDialog();
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+
+                    using (StreamWriter sw = new StreamWriter(file.FileName))
+                        foreach (Activiteit a in schoonmaaklijst)
+                        {
+                            int i = a.ActiviteitiD;
+
+                            switch (i)
+                            {
+                                case 1:
+                                    actitiveit = "Grote schoonmaak";
+                                    break;
+                                case 2:
+                                    actitiveit = "Kleine Schoonmaak";
+                                    break;
+                            }
+                            sw.WriteLine("Voornaam Schoonmaker: " + a.medewerker.Voornaam);
+                            sw.WriteLine("Tram id: " + a.Tram.id);
+                            sw.WriteLine(actitiveit);
+                            sw.WriteLine("BeginTijd: "+ a.BeginDatum);
+                            sw.WriteLine("EindTijd: " +a.EindDatum);
+                            sw.WriteLine(" ");
+                        }
+                }
+
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
