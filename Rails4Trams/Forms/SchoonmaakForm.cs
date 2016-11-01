@@ -56,21 +56,32 @@ namespace Rails4Trams
         }
         private void btnAfronden_Click(object sender, EventArgs e)
         {
-            if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
+            if (tbTijdsindicatie.Text == null)
             {
-              Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(3), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
+        if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
+            {
+              Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
 
         private void btnAfrondenGrote_Click(object sender, EventArgs e)
         {
-         
-            if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
+            if (tbTijdsindicatie.Text == null)
             {
-                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(6), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
+           if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
+            {
+                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
@@ -93,8 +104,7 @@ namespace Rails4Trams
         private void btnSchoonmaaklijstAanvragen_Click(object sender, EventArgs e)
         {
             List<Activiteit> schoonmaaklijst = activiteitRepo.VraagSchoonmaaklijstAan();
-            MessageBox.Show(schoonmaaklijst.Count.ToString());
-            SaveFileDialog file;        // koppeling met bestand
+            SaveFileDialog file;      
 
             string actitiveit = "";
 

@@ -39,6 +39,8 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSchoonmaakTerug = new System.Windows.Forms.Button();
             this.btnSchoonmaaklijstAanvragen = new System.Windows.Forms.Button();
+            this.tbTijdsindicatie = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbKlein
@@ -146,11 +148,29 @@
             this.btnSchoonmaaklijstAanvragen.UseVisualStyleBackColor = true;
             this.btnSchoonmaaklijstAanvragen.Click += new System.EventHandler(this.btnSchoonmaaklijstAanvragen_Click);
             // 
+            // tbTijdsindicatie
+            // 
+            this.tbTijdsindicatie.Location = new System.Drawing.Point(377, 236);
+            this.tbTijdsindicatie.Name = "tbTijdsindicatie";
+            this.tbTijdsindicatie.Size = new System.Drawing.Size(100, 22);
+            this.tbTijdsindicatie.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(365, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "duur schoonmaak in uur:";
+            // 
             // SchoonmaakForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 415);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbTijdsindicatie);
             this.Controls.Add(this.btnSchoonmaaklijstAanvragen);
             this.Controls.Add(this.btnSchoonmaakTerug);
             this.Controls.Add(this.btnLogOut);
@@ -182,5 +202,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnSchoonmaakTerug;
         private System.Windows.Forms.Button btnSchoonmaaklijstAanvragen;
+        private System.Windows.Forms.TextBox tbTijdsindicatie;
+        private System.Windows.Forms.Label label5;
     }
 }
