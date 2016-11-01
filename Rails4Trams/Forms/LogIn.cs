@@ -45,7 +45,7 @@ namespace Rails4Trams
                 }
                 if (InlogGebruiker is Schoonmaker)
                 {
-                    SchoonForm = new SchoonmaakForm();
+                    SchoonForm = new SchoonmaakForm(InlogGebruiker);
                     SchoonForm.IngelogdeMedewerker = InlogGebruiker;
                     SchoonForm.Show();
                 }

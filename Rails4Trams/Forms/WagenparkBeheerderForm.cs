@@ -53,7 +53,7 @@ namespace Rails4Trams
         private void btnSchoonmaakScheema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SchoonmaakForm s = new SchoonmaakForm();
+            SchoonmaakForm s = new SchoonmaakForm(this.IngelogdeMedewerker);
             s.IngelogdeMedewerker = IngelogdeMedewerker;
             s.Show();
         }
