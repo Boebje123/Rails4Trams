@@ -17,9 +17,13 @@ namespace Rails4Trams
         {
             return context.GetAllUsers();
         }
-        public Medewerker Insert(Medewerker gebruiker)
+        public Medewerker Insert(Medewerker gebruiker,int functieid)
         {
-            return context.Insert(gebruiker);
+            return context.Insert(gebruiker,functieid);
+        }
+        public bool Delete(Medewerker medewerker)
+        {
+            return context.Delete(medewerker);
         }
         public bool Update(Medewerker gebruiker)
         {

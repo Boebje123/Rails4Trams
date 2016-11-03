@@ -56,6 +56,12 @@
     <Compile Include="Forms\BestuurderForm.Designer.cs">
       <DependentUpon>BestuurderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OverzichtGebruikers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OverzichtGebruikers.Designer.cs">
+      <DependentUpon>OverzichtGebruikers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Context\Database.cs" />
     <Compile Include="Logic\Context\IActiviteitContext.cs" />
     <Compile Include="Logic\Context\IMedewerker.cs" />
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OverzichtGebruikers.resx">
+      <DependentUpon>OverzichtGebruikers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

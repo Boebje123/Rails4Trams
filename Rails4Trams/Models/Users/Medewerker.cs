@@ -12,11 +12,11 @@ namespace Rails4Trams
 
 
 
-        private int Id { get; set; }
+        public int Id { get; set; }
         public string Voornaam { get; set; }
-        private string Achternaam { get; set; }
-        private string Gebruikersnaam { get; set; }
-        private string Wachtwoord { get; set; }
+        public string Achternaam { get; set; }
+        public string Gebruikersnaam { get; set; }
+        public string Wachtwoord { get; set; }
 
 
         public Medewerker(string voornaam, string achternaam, string gebruikersnaam, string wachtwoord)
