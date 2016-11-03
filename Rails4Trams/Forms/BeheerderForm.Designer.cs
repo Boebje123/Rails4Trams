@@ -84,6 +84,7 @@
             this.btnResetData = new System.Windows.Forms.Button();
             this.lbInfo = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnTerugBeheerform = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg45)).BeginInit();
@@ -510,19 +511,31 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(1496, 90);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 188);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(92, 38);
+            this.btnLogOut.Size = new System.Drawing.Size(150, 28);
             this.btnLogOut.TabIndex = 25;
             this.btnLogOut.Text = "Afmelden";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnTerugBeheerform
+            // 
+            this.btnTerugBeheerform.Location = new System.Drawing.Point(12, 222);
+            this.btnTerugBeheerform.Name = "btnTerugBeheerform";
+            this.btnTerugBeheerform.Size = new System.Drawing.Size(150, 28);
+            this.btnTerugBeheerform.TabIndex = 26;
+            this.btnTerugBeheerform.Text = "Terug";
+            this.btnTerugBeheerform.UseVisualStyleBackColor = true;
+            this.btnTerugBeheerform.Visible = false;
+            this.btnTerugBeheerform.Click += new System.EventHandler(this.btnTerugBeheerform_Click);
+            // 
             // BeheerderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1771, 847);
+            this.ClientSize = new System.Drawing.Size(1546, 736);
+            this.Controls.Add(this.btnTerugBeheerform);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.btnResetData);
@@ -610,6 +623,7 @@
         private System.Windows.Forms.Button btnResetData;
         private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnTerugBeheerform;
     }
 }
 

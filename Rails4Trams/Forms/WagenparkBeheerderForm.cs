@@ -48,7 +48,7 @@ namespace Rails4Trams
         private void btnBestuurSchema_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestuurderForm b = new BestuurderForm();
+            BestuurderForm b = new BestuurderForm(this.IngelogdeMedewerker);
             b.Show();
         }
 
@@ -56,7 +56,6 @@ namespace Rails4Trams
         {
             this.Hide();
             SchoonmaakForm s = new SchoonmaakForm(this.IngelogdeMedewerker);
-            s.IngelogdeMedewerker = IngelogdeMedewerker;
             s.Show();
         }
 
@@ -65,13 +64,14 @@ namespace Rails4Trams
 
             this.Hide();
             TechnicusForm t = new TechnicusForm(this.IngelogdeMedewerker);
-   
             t.Show();
         }
 
         private void btnRemiseBeheSchema_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            BeheerderForm b = new BeheerderForm(this.IngelogdeMedewerker);
+            b.Show();
         }
     }
 }

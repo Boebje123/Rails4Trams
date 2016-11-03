@@ -25,21 +25,22 @@ namespace Rails4Trams
 
         }
 
-        public void Login()
+
+        private void button1_Click(object sender, EventArgs e)
         {
             if (medewerkerRepo.LogIn(tbGebruikersnaam.Text, tbWachtwoord.Text))
             {
                 Medewerker InlogGebruiker = medewerkerRepo.GetGebruiker(tbGebruikersnaam.Text);
-                if (InlogGebruiker is Beheerder)
-                {
-                    BeheerForm = new BeheerderForm();
-                    BeheerForm.Welkomlabel = InlogGebruiker.ToString();
-                    BeheerForm.Show();
+                if(InlogGebruiker is Beheerder)
+                { 
+                        BeheerForm = new BeheerderForm(InlogGebruiker);
+                        BeheerForm.Welkomlabel = InlogGebruiker.ToString();
+                        BeheerForm.Show();                  
                 }
                 if (InlogGebruiker is Technicus)
                 {
                     TechnicusForm = new TechnicusForm(InlogGebruiker);
-                    //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
+                 //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
                     TechnicusForm.Show();
                 }
                 if (InlogGebruiker is Schoonmaker)
@@ -56,7 +57,7 @@ namespace Rails4Trams
                 }
                 if (InlogGebruiker is Bestuurder)
                 {
-                    BestuurderForm = new BestuurderForm();
+                    BestuurderForm = new BestuurderForm(InlogGebruiker);
                     BestuurderForm.IngelogdeMedewerker = InlogGebruiker;
                     BestuurderForm.Show();
                 }
@@ -65,18 +66,6 @@ namespace Rails4Trams
             else
             {
                 MessageBox.Show("Uw inlognaam en wachtwoord komen niet overeen.");
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Login();
-        }
-
-        private void tbWachtwoord_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                Login();
             }
         }
     }
