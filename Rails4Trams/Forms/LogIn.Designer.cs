@@ -38,7 +38,7 @@
             // tbGebruikersnaam
             // 
             this.tbGebruikersnaam.Location = new System.Drawing.Point(98, 14);
-            this.tbGebruikersnaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGebruikersnaam.Margin = new System.Windows.Forms.Padding(2);
             this.tbGebruikersnaam.Name = "tbGebruikersnaam";
             this.tbGebruikersnaam.Size = new System.Drawing.Size(143, 20);
             this.tbGebruikersnaam.TabIndex = 0;
@@ -46,12 +46,12 @@
             // tbWachtwoord
             // 
             this.tbWachtwoord.Location = new System.Drawing.Point(98, 37);
-            this.tbWachtwoord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWachtwoord.Margin = new System.Windows.Forms.Padding(2);
             this.tbWachtwoord.Name = "tbWachtwoord";
             this.tbWachtwoord.PasswordChar = '*';
             this.tbWachtwoord.Size = new System.Drawing.Size(143, 20);
             this.tbWachtwoord.TabIndex = 1;
-         
+            this.tbWachtwoord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbWachtwoord_KeyDown);
             // 
             // lblGebruikersnaam
             // 
@@ -76,7 +76,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(98, 67);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(70, 24);
             this.btnLogin.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.Controls.Add(this.lblGebruikersnaam);
             this.Controls.Add(this.tbWachtwoord);
             this.Controls.Add(this.tbGebruikersnaam);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogIn";
             this.Text = "LogIn";
             this.ResumeLayout(false);
