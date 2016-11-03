@@ -39,25 +39,25 @@ namespace Rails4Trams
                 if (InlogGebruiker is Technicus)
                 {
                     TechnicusForm = new TechnicusForm(InlogGebruiker);
-                    //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
+               
                     TechnicusForm.Show();
                 }
                 if (InlogGebruiker is Schoonmaker)
                 {
                     SchoonForm = new SchoonmaakForm(InlogGebruiker);
-                    SchoonForm.IngelogdeMedewerker = InlogGebruiker;
+          
                     SchoonForm.Show();
                 }
                 if (InlogGebruiker is WagenparkBeheerder)
                 {
-                    WagenForm = new WagenparkBeheerderForm();
-                    WagenForm.IngelogdeMedewerker = InlogGebruiker;
+                    WagenForm = new WagenparkBeheerderForm(InlogGebruiker);
+         
                     WagenForm.Show();
                 }
                 if (InlogGebruiker is Bestuurder)
                 {
                     BestuurderForm = new BestuurderForm(InlogGebruiker);
-                    BestuurderForm.IngelogdeMedewerker = InlogGebruiker;
+              
                     BestuurderForm.Show();
                 }
                 this.Hide();

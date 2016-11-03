@@ -16,8 +16,9 @@ namespace Rails4Trams
         public Medewerker IngelogdeMedewerker { get; set; }
       
       
-        public WagenparkBeheerderForm()
+        public WagenparkBeheerderForm(Medewerker medewerker)
         {
+            this.IngelogdeMedewerker = medewerker;
             InitializeComponent();     
         }
       
@@ -30,7 +31,7 @@ namespace Rails4Trams
 
         private void btnGebBehe_Click(object sender, EventArgs e)
         {
-           Forms.OverzichtGebruikers gebruikersForm = new Forms.OverzichtGebruikers();
+           Forms.OverzichtGebruikers gebruikersForm = new Forms.OverzichtGebruikers(IngelogdeMedewerker);
             gebruikersForm.Show();
             this.Hide();
         }

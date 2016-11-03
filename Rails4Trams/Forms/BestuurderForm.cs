@@ -15,15 +15,20 @@ namespace Rails4Trams
     public partial class BestuurderForm : Form
     {
         RFID RFID = new RFID();
-        public Medewerker IngelogdeMedewerker { get; set; }
+        Medewerker IngelogdeMedewerker { get; set; }
         private TramRepository tramrepo;
 
-        public BestuurderForm(Medewerker beheerder)
+        public BestuurderForm(Medewerker medewerker)
         {
-            this.IngelogdeMedewerker = beheerder;
+            this.IngelogdeMedewerker = medewerker;
             InitializeComponent();
-            StartRFID();
+           
             tramrepo = new TramRepository(new SqlTramContext());
+            if(IngelogdeMedewerker is WagenparkBeheerder)
+            {
+                btnBestFormBack.Visible = true;
+            }
+            StartRFID();
         }
   
        public void StartRFID()
@@ -44,6 +49,8 @@ namespace Rails4Trams
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            RFID.Antenna = false;
+            RFID.close();
             this.Hide();
             LogIn l = new LogIn();
             l.Show();
@@ -51,15 +58,13 @@ namespace Rails4Trams
 
         private void btnBestFormBack_Click(object sender, EventArgs e)
         {
+            RFID.Antenna = false;
+            RFID.close();
             this.Hide();
-            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
+            WagenparkBeheerderForm l = new WagenparkBeheerderForm(IngelogdeMedewerker);
             l.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
  
@@ -108,6 +113,11 @@ namespace Rails4Trams
             {
                 GetTram();
             }
+        }
+
+        private void btnRFID_Click(object sender, EventArgs e)
+        {
+    
         }
     }
 }

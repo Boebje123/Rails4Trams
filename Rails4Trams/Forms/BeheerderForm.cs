@@ -58,7 +58,7 @@ namespace Rails4Trams
 
         private void btnTerugBeheerform_Click(object sender, EventArgs e)
         {
-            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
+            WagenparkBeheerderForm l = new WagenparkBeheerderForm(IngelogdeMedewerker);
             l.IngelogdeMedewerker = this.IngelogdeMedewerker;
             this.Hide();
             l.Show();

@@ -14,12 +14,14 @@ namespace Rails4Trams.Forms
     {
         MedewerkerRepository medewerkerRepo;
         List<Medewerker> Medewerkers;
-        public OverzichtGebruikers()
+        Medewerker ingelogdeMedewerker { get; set; }
+        public OverzichtGebruikers(Medewerker medewerker)
         {
             InitializeComponent();
             medewerkerRepo = new MedewerkerRepository(new SqlMedewerkerContext());
             Medewerkers = new List<Medewerker>();
             UpdateForm();
+            this.ingelogdeMedewerker = medewerker;
         }
         public void UpdateForm()
         {
@@ -65,7 +67,7 @@ namespace Rails4Trams.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WagenparkBeheerderForm wagenparkForm = new WagenparkBeheerderForm();
+            WagenparkBeheerderForm wagenparkForm = new WagenparkBeheerderForm(ingelogdeMedewerker);
             wagenparkForm.Show();
         }
     }

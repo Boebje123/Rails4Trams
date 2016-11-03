@@ -44,7 +44,6 @@
             this.lbTramnr = new System.Windows.Forms.Label();
             this.lbSector = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnRFID = new System.Windows.Forms.Button();
             lbNaarSpoor = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -214,21 +213,11 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "RFID";
             // 
-            // btnRFID
-            // 
-            this.btnRFID.Location = new System.Drawing.Point(351, 323);
-            this.btnRFID.Name = "btnRFID";
-            this.btnRFID.Size = new System.Drawing.Size(105, 25);
-            this.btnRFID.TabIndex = 12;
-            this.btnRFID.Text = "open rfid";
-            this.btnRFID.UseVisualStyleBackColor = true;
-            // 
             // BestuurderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 480);
-            this.Controls.Add(this.btnRFID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSector);
             this.Controls.Add(lbNaarSpoor);
@@ -267,6 +256,5 @@
         private System.Windows.Forms.Label lbTramnr;
         private System.Windows.Forms.Label lbSector;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnRFID;
     }
 }

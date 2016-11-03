@@ -98,14 +98,14 @@ namespace Rails4Trams
         private void btnTerugTechForm_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WagenparkBeheerderForm l = new WagenparkBeheerderForm();
+            WagenparkBeheerderForm l = new WagenparkBeheerderForm(IngelogdeMedewerker);
             l.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WagenparkBeheerderForm w = new WagenparkBeheerderForm();
-            w.IngelogdeMedewerker = this.IngelogdeMedewerker;
+            WagenparkBeheerderForm w = new WagenparkBeheerderForm(IngelogdeMedewerker);
+
             this.Hide();
             w.Show();
         }
