@@ -71,7 +71,7 @@ namespace Rails4Trams
         {
             Login();
         }
-
+        //login by pressing enter
         private void tbWachtwoord_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
