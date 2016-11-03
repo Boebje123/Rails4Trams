@@ -460,14 +460,7 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(6, 21);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 19;
-            this.test.Text = "button1";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.Click += new System.EventHandler(this.test_Click);
-            // 
+
             // ExposableGroupBox
             // 
             this.ExposableGroupBox.Controls.Add(this.test);

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Phidgets;
+using Phidgets.Events;
 
 namespace Rails4Trams
 {
     public partial class BestuurderForm : Form
     {
+        RFID RFID = new RFID();
         public Medewerker IngelogdeMedewerker { get; set; }
         private TramRepository tramrepo;
 
@@ -19,7 +22,23 @@ namespace Rails4Trams
         {
 
             InitializeComponent();
-            this.tramrepo =new TramRepository(new SqlTramContext());
+            StartRFID();
+        }
+  
+       public void StartRFID()
+        {
+            //  initialize Phidgets RFID reader and hook the event handlers
+            RFID.Error += new Phidgets.Events.ErrorEventHandler(rfid_Error);
+
+            RFID.Tag += new TagEventHandler(rfid_Tag);
+
+            //open the connection
+            RFID.open();
+
+            //wait for an rfid
+            RFID.waitForAttachment();
+
+            RFID.Antenna = true;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -43,16 +62,19 @@ namespace Rails4Trams
 
 
  
-        private void tbRFID_KeyDown_1(object sender, KeyEventArgs e)
+        private void tbRFID_KeyDown_1(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Tram t = tramrepo.GetTramWithRFID(tbRFID.Text);
-                if (t != null)
-                 lbTramnr.Text = t.id.ToString();
+                GetTram();
             }
         }
-
+        public void GetTram()
+        {
+            Tram t = tramrepo.GetTramWithRFID(tbRFID.Text);
+            if (t != null)
+                lbTramnr.Text = t.id.ToString();
+        }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
             string status = comboBox1.Text;
@@ -75,5 +97,17 @@ namespace Rails4Trams
             if (i != 0)
                 tramrepo.Update(Convert.ToInt32(textBox1.Text), i);
         }
+        private void rfid_Tag(object sender, TagEventArgs e)
+        {
+            tbRFID.Text = e.Tag;
+            GetTram();
+        }
+
+        private void rfid_Error(object sender, EventArgs e)
+        {
+            MessageBox.Show("RFID Error");
+        }
+
+   
     }
 }

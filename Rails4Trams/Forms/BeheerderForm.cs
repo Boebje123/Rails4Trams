@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Phidgets.Events;
+using Phidgets;
 
 namespace Rails4Trams
 {
    
     public partial class BeheerderForm : Form
     {
-        //  RFID RFID = new RFID();
+        RFID RFID = new RFID();
         public string Welkomlabel
         {
             get
@@ -32,35 +33,7 @@ namespace Rails4Trams
         }
   
 
-        private void rfid_Error(object sender, EventArgs e)
-        {
-            MessageBox.Show("RFID Error");
-        }
-
-        //private void rfid_Tag(object sender, TagEventArgs e)
-        //{
-        //    textBox1.Text = e.Tag;
-        //}
-
-        private void test_Click(object sender, EventArgs e)
-        {
-            ////initialize Phidgets RFID reader and hook the event handlers
-            //RFID.Error += new Phidgets.Events.ErrorEventHandler(rfid_Error);
-
-            //RFID.Tag += new TagEventHandler(rfid_Tag);
-
-            ////open the connection
-            //RFID.open();
-
-            ////wait for an rfid
-            //RFID.waitForAttachment();
-
-            ////turn on the lights to show it is on
-            //RFID.Antenna = true;
-            //btnRFID.Enabled = false;
-            //btnRFID.Visible = false;
-            //lblRFID.Visible = false;
-        }
+      
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
