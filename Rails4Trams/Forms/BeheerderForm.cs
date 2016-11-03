@@ -15,14 +15,14 @@ namespace Rails4Trams
    
     public partial class BeheerderForm : Form
     {
-<<<<<<< HEAD
+
         RFID RFID = new RFID();
-=======
+
 
         public Medewerker IngelogdeMedewerker { get; set; }
 
         //  RFID RFID = new RFID();
->>>>>>> origin/master
+
         public string Welkomlabel
         {
             get
@@ -45,9 +45,9 @@ namespace Rails4Trams
             }
 
         }
-  
-
       
+
+
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

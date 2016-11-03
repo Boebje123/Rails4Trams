@@ -51,7 +51,7 @@
             this.tbWachtwoord.PasswordChar = '*';
             this.tbWachtwoord.Size = new System.Drawing.Size(143, 20);
             this.tbWachtwoord.TabIndex = 1;
-            this.tbWachtwoord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbWachtwoord_KeyDown);
+         
             // 
             // lblGebruikersnaam
             // 

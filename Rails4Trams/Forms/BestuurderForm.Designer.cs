@@ -184,7 +184,7 @@
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.Size = new System.Drawing.Size(281, 22);
             this.tbRFID.TabIndex = 7;
-        //    this.tbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbRFID_KeyDown_1);
+            this.tbRFID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbRFID_KeyDown);
             // 
             // lbTramnr
             // 
@@ -222,7 +222,6 @@
             this.btnRFID.TabIndex = 12;
             this.btnRFID.Text = "open rfid";
             this.btnRFID.UseVisualStyleBackColor = true;
-  
             // 
             // BestuurderForm
             // 

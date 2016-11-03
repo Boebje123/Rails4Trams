@@ -18,11 +18,12 @@ namespace Rails4Trams
         public Medewerker IngelogdeMedewerker { get; set; }
         private TramRepository tramrepo;
 
-        public BestuurderForm()
+        public BestuurderForm(Medewerker beheerder)
         {
-
+            this.IngelogdeMedewerker = beheerder;
             InitializeComponent();
             StartRFID();
+            tramrepo = new TramRepository(new SqlTramContext());
         }
   
        public void StartRFID()
@@ -62,13 +63,6 @@ namespace Rails4Trams
 
 
  
-        private void tbRFID_KeyDown_1(object sender, System.Windows.Forms.KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                GetTram();
-            }
-        }
         public void GetTram()
         {
             Tram t = tramrepo.GetTramWithRFID(tbRFID.Text);
@@ -108,6 +102,12 @@ namespace Rails4Trams
             MessageBox.Show("RFID Error");
         }
 
-   
+        private void tbRFID_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                GetTram();
+            }
+        }
     }
 }
