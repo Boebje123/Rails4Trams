@@ -25,22 +25,21 @@ namespace Rails4Trams
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        public void Login()
         {
             if (medewerkerRepo.LogIn(tbGebruikersnaam.Text, tbWachtwoord.Text))
             {
                 Medewerker InlogGebruiker = medewerkerRepo.GetGebruiker(tbGebruikersnaam.Text);
-                if(InlogGebruiker is Beheerder)
-                { 
-                        BeheerForm = new BeheerderForm();
-                        BeheerForm.Welkomlabel = InlogGebruiker.ToString();
-                        BeheerForm.Show();                  
+                if (InlogGebruiker is Beheerder)
+                {
+                    BeheerForm = new BeheerderForm();
+                    BeheerForm.Welkomlabel = InlogGebruiker.ToString();
+                    BeheerForm.Show();
                 }
                 if (InlogGebruiker is Technicus)
                 {
                     TechnicusForm = new TechnicusForm(InlogGebruiker);
-                 //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
+                    //   TechnicusForm.IngelogdeMedewerker = InlogGebruiker;
                     TechnicusForm.Show();
                 }
                 if (InlogGebruiker is Schoonmaker)
@@ -66,6 +65,18 @@ namespace Rails4Trams
             else
             {
                 MessageBox.Show("Uw inlognaam en wachtwoord komen niet overeen.");
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void tbWachtwoord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Login();
             }
         }
     }

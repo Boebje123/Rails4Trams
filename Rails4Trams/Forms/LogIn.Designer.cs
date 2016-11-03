@@ -37,42 +37,48 @@
             // 
             // tbGebruikersnaam
             // 
-            this.tbGebruikersnaam.Location = new System.Drawing.Point(131, 17);
+            this.tbGebruikersnaam.Location = new System.Drawing.Point(98, 14);
+            this.tbGebruikersnaam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbGebruikersnaam.Name = "tbGebruikersnaam";
-            this.tbGebruikersnaam.Size = new System.Drawing.Size(189, 22);
+            this.tbGebruikersnaam.Size = new System.Drawing.Size(143, 20);
             this.tbGebruikersnaam.TabIndex = 0;
             // 
             // tbWachtwoord
             // 
-            this.tbWachtwoord.Location = new System.Drawing.Point(131, 46);
+            this.tbWachtwoord.Location = new System.Drawing.Point(98, 37);
+            this.tbWachtwoord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbWachtwoord.Name = "tbWachtwoord";
             this.tbWachtwoord.PasswordChar = '*';
-            this.tbWachtwoord.Size = new System.Drawing.Size(189, 22);
+            this.tbWachtwoord.Size = new System.Drawing.Size(143, 20);
             this.tbWachtwoord.TabIndex = 1;
+            this.tbWachtwoord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbWachtwoord_KeyDown);
             // 
             // lblGebruikersnaam
             // 
             this.lblGebruikersnaam.AutoSize = true;
-            this.lblGebruikersnaam.Location = new System.Drawing.Point(12, 22);
+            this.lblGebruikersnaam.Location = new System.Drawing.Point(9, 18);
+            this.lblGebruikersnaam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGebruikersnaam.Name = "lblGebruikersnaam";
-            this.lblGebruikersnaam.Size = new System.Drawing.Size(117, 17);
+            this.lblGebruikersnaam.Size = new System.Drawing.Size(87, 13);
             this.lblGebruikersnaam.TabIndex = 2;
             this.lblGebruikersnaam.Text = "Gebruikersnaam:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
+            this.label2.Location = new System.Drawing.Point(9, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Wachtwoord:";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(131, 82);
+            this.btnLogin.Location = new System.Drawing.Point(98, 67);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnLogin.Size = new System.Drawing.Size(70, 24);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -80,14 +86,15 @@
             // 
             // LogIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 247);
+            this.ClientSize = new System.Drawing.Size(426, 201);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblGebruikersnaam);
             this.Controls.Add(this.tbWachtwoord);
             this.Controls.Add(this.tbGebruikersnaam);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LogIn";
             this.Text = "LogIn";
             this.ResumeLayout(false);
