@@ -11,7 +11,10 @@ namespace Rails4Trams
         public Bestuurder(int id, string voornaam, string achternaam, string inlognaam, string wachtwoord) : base(id, voornaam, achternaam, inlognaam, wachtwoord)
         {
         }
+        public Bestuurder(string voornaam, string achternaam, string inlognaam, string wachtwoord) : base(voornaam, achternaam, inlognaam, wachtwoord)
+        {
 
+        }
         public override string ToString()
         {
             return "Bestuurder " + Voornaam;

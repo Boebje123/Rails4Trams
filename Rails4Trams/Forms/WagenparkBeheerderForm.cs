@@ -14,7 +14,7 @@ namespace Rails4Trams
     {
 
         public Medewerker IngelogdeMedewerker { get; set; }
-       
+      
       
         public WagenparkBeheerderForm()
         {
@@ -30,7 +30,9 @@ namespace Rails4Trams
 
         private void btnGebBehe_Click(object sender, EventArgs e)
         {
-
+           Forms.OverzichtGebruikers gebruikersForm = new Forms.OverzichtGebruikers();
+            gebruikersForm.Show();
+            this.Hide();
         }
 
         private void btnOverzichtTrams_Click(object sender, EventArgs e)

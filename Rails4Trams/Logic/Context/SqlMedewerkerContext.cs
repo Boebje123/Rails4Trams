@@ -4,11 +4,38 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rails4Trams
 {
     public class SqlMedewerkerContext : IMedewerkerContext
     {
+        public bool Delete(Medewerker medewerker)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "DELETE FROM medewerker WHERE id= @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", medewerker.Id);
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+
+            return false;
+
+        }
+
         public List<Medewerker> GetAllUsers()
         {
             List<Medewerker> result = new List<Medewerker>();
@@ -75,9 +102,49 @@ namespace Rails4Trams
             return ReturnGebruiker;
 
         }
-        public Medewerker Insert(Medewerker gebruiker)
+        public Medewerker Insert(Medewerker gebruiker,int functieid)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+              
+            
+                string query = "INSERT INTO medewerker (functieid,voornaam, achternaam, inlognaam, wachtwoord) VALUES (@functieid,@voornaam,@achternaam,@gebruikersnaam,@wachtwoord)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("Functieid", functieid);
+                    command.Parameters.AddWithValue("Voornaam", gebruiker.Voornaam);
+                    command.Parameters.AddWithValue("Achternaam", gebruiker.Achternaam);
+                    command.Parameters.AddWithValue("Gebruikersnaam", gebruiker.Gebruikersnaam);
+                    command.Parameters.AddWithValue("Wachtwoord", gebruiker.Wachtwoord);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                      MessageBox.Show(ex.Message);
+                    }
+                }
+                switch(functieid)
+                {
+                    case 1:
+                        gebruiker = new Beheerder(gebruiker.Voornaam, gebruiker.Achternaam, gebruiker.Gebruikersnaam, gebruiker.Wachtwoord);
+                 break;
+                    case 2:
+                        gebruiker = new WagenparkBeheerder(gebruiker.Voornaam, gebruiker.Achternaam, gebruiker.Gebruikersnaam, gebruiker.Wachtwoord);
+                        break;
+                    case 3:
+                        gebruiker = new Technicus(gebruiker.Voornaam, gebruiker.Achternaam, gebruiker.Gebruikersnaam, gebruiker.Wachtwoord);
+                        break;
+                    case 4:
+                        gebruiker = new Schoonmaker(gebruiker.Voornaam, gebruiker.Achternaam, gebruiker.Gebruikersnaam, gebruiker.Wachtwoord);
+                        break;
+                    case 5:
+                        gebruiker = new Bestuurder(gebruiker.Voornaam, gebruiker.Achternaam, gebruiker.Gebruikersnaam, gebruiker.Wachtwoord);
+                        break; 
+                }               
+            }
+            return gebruiker;
         }
 
         public bool LogIn(string inlognaam, string wachtwoord)

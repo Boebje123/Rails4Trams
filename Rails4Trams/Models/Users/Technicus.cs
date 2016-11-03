@@ -11,6 +11,10 @@ namespace Rails4Trams
         public Technicus(int id, string voornaam, string achternaam, string inlognaam, string wachtwoord) : base(id, voornaam, achternaam, inlognaam, wachtwoord)
         {
         }
+        public Technicus(string voornaam, string achternaam, string inlognaam, string wachtwoord) : base(voornaam, achternaam, inlognaam, wachtwoord)
+        {
+
+        }
 
         public override string ToString()
         {
