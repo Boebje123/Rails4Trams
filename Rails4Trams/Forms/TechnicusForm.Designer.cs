@@ -39,29 +39,31 @@
             this.btnVeranderStatus = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTerugTechForm = new System.Windows.Forms.Button();
+            this.tbTijdsindicatie = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbKleineDienst
             // 
             this.lbKleineDienst.FormattingEnabled = true;
             this.lbKleineDienst.ItemHeight = 16;
-            this.lbKleineDienst.Location = new System.Drawing.Point(131, 57);
+            this.lbKleineDienst.Location = new System.Drawing.Point(52, 78);
             this.lbKleineDienst.Name = "lbKleineDienst";
-            this.lbKleineDienst.Size = new System.Drawing.Size(173, 244);
+            this.lbKleineDienst.Size = new System.Drawing.Size(408, 244);
             this.lbKleineDienst.TabIndex = 0;
             // 
             // lbGroteDienst
             // 
             this.lbGroteDienst.FormattingEnabled = true;
             this.lbGroteDienst.ItemHeight = 16;
-            this.lbGroteDienst.Location = new System.Drawing.Point(441, 57);
+            this.lbGroteDienst.Location = new System.Drawing.Point(728, 78);
             this.lbGroteDienst.Name = "lbGroteDienst";
-            this.lbGroteDienst.Size = new System.Drawing.Size(173, 244);
+            this.lbGroteDienst.Size = new System.Drawing.Size(349, 244);
             this.lbGroteDienst.TabIndex = 1;
             // 
             // btnKleineDienstAfronden
             // 
-            this.btnKleineDienstAfronden.Location = new System.Drawing.Point(170, 319);
+            this.btnKleineDienstAfronden.Location = new System.Drawing.Point(183, 351);
             this.btnKleineDienstAfronden.Name = "btnKleineDienstAfronden";
             this.btnKleineDienstAfronden.Size = new System.Drawing.Size(104, 49);
             this.btnKleineDienstAfronden.TabIndex = 2;
@@ -71,7 +73,7 @@
             // 
             // btnGroteDienstAfronden
             // 
-            this.btnGroteDienstAfronden.Location = new System.Drawing.Point(474, 319);
+            this.btnGroteDienstAfronden.Location = new System.Drawing.Point(848, 361);
             this.btnGroteDienstAfronden.Name = "btnGroteDienstAfronden";
             this.btnGroteDienstAfronden.Size = new System.Drawing.Size(119, 49);
             this.btnGroteDienstAfronden.TabIndex = 3;
@@ -82,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 28);
+            this.label1.Location = new System.Drawing.Point(49, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 4;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(438, 28);
+            this.label2.Location = new System.Drawing.Point(735, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 5;
@@ -99,7 +101,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(733, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(1161, 28);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(91, 43);
             this.btnLogOut.TabIndex = 6;
@@ -114,14 +116,14 @@
             "Defect",
             "Dienst",
             "Remise"});
-            this.comboBox1.Location = new System.Drawing.Point(310, 128);
+            this.comboBox1.Location = new System.Drawing.Point(516, 113);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
             // 
             // btnVeranderStatus
             // 
-            this.btnVeranderStatus.Location = new System.Drawing.Point(333, 184);
+            this.btnVeranderStatus.Location = new System.Drawing.Point(539, 169);
             this.btnVeranderStatus.Name = "btnVeranderStatus";
             this.btnVeranderStatus.Size = new System.Drawing.Size(75, 49);
             this.btnVeranderStatus.TabIndex = 8;
@@ -132,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(343, 87);
+            this.label3.Location = new System.Drawing.Point(549, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 9;
@@ -140,7 +142,7 @@
             // 
             // btnTerugTechForm
             // 
-            this.btnTerugTechForm.Location = new System.Drawing.Point(749, 363);
+            this.btnTerugTechForm.Location = new System.Drawing.Point(1177, 477);
             this.btnTerugTechForm.Name = "btnTerugTechForm";
             this.btnTerugTechForm.Size = new System.Drawing.Size(75, 32);
             this.btnTerugTechForm.TabIndex = 10;
@@ -149,11 +151,29 @@
             this.btnTerugTechForm.Visible = false;
             this.btnTerugTechForm.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tbTijdsindicatie
+            // 
+            this.tbTijdsindicatie.Location = new System.Drawing.Point(530, 319);
+            this.tbTijdsindicatie.Name = "tbTijdsindicatie";
+            this.tbTijdsindicatie.Size = new System.Drawing.Size(100, 22);
+            this.tbTijdsindicatie.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(513, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "duur reperatie in uur:";
+            // 
             // TechnicusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 407);
+            this.ClientSize = new System.Drawing.Size(1302, 540);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbTijdsindicatie);
             this.Controls.Add(this.btnTerugTechForm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnVeranderStatus);
@@ -185,5 +205,7 @@
         private System.Windows.Forms.Button btnVeranderStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTerugTechForm;
+        private System.Windows.Forms.TextBox tbTijdsindicatie;
+        private System.Windows.Forms.Label label5;
     }
 }

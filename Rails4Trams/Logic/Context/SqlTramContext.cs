@@ -96,7 +96,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where DATEDIFF(m,laatsteKleineServiceBeurt,getdate())>=3 ";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineServiceBeurt,getdate())>=3 or status = 1";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -116,7 +116,7 @@ namespace Rails4Trams
             List<Tram> result = new List<Tram>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select * from tram where DATEDIFF(m,laatsteKleineSchoonmaakBeurt,getdate())>=1 ";
+                string query = "select * from tram where DATEDIFF(m,laatsteKleineSchoonmaakBeurt,getdate())>=1 or status= 2";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

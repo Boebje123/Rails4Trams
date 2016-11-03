@@ -18,5 +18,9 @@ namespace Rails4Trams
         {
             return context.Insert(activiteit);
         }
+        public List<Activiteit> VraagSchoonmaaklijstAan()
+        {
+            return context.VraagSchoonmaaklijstAan();
+        }
     }
 }

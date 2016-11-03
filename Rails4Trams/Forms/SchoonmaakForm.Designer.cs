@@ -38,15 +38,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSchoonmaakTerug = new System.Windows.Forms.Button();
+            this.btnSchoonmaaklijstAanvragen = new System.Windows.Forms.Button();
+            this.tbTijdsindicatie = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbKlein
             // 
             this.lbKlein.FormattingEnabled = true;
             this.lbKlein.ItemHeight = 16;
-            this.lbKlein.Location = new System.Drawing.Point(148, 68);
+            this.lbKlein.Location = new System.Drawing.Point(131, 68);
             this.lbKlein.Name = "lbKlein";
-            this.lbKlein.Size = new System.Drawing.Size(182, 212);
+            this.lbKlein.Size = new System.Drawing.Size(263, 212);
             this.lbKlein.TabIndex = 0;
             // 
             // btnAfrondenKleine
@@ -70,7 +73,7 @@
             // 
             // btnAfrondenGrote
             // 
-            this.btnAfrondenGrote.Location = new System.Drawing.Point(541, 330);
+            this.btnAfrondenGrote.Location = new System.Drawing.Point(708, 330);
             this.btnAfrondenGrote.Name = "btnAfrondenGrote";
             this.btnAfrondenGrote.Size = new System.Drawing.Size(174, 63);
             this.btnAfrondenGrote.TabIndex = 5;
@@ -82,15 +85,15 @@
             // 
             this.lbGroot.FormattingEnabled = true;
             this.lbGroot.ItemHeight = 16;
-            this.lbGroot.Location = new System.Drawing.Point(541, 68);
+            this.lbGroot.Location = new System.Drawing.Point(649, 68);
             this.lbGroot.Name = "lbGroot";
-            this.lbGroot.Size = new System.Drawing.Size(182, 212);
+            this.lbGroot.Size = new System.Drawing.Size(300, 212);
             this.lbGroot.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(145, 48);
+            this.label2.Location = new System.Drawing.Point(128, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 17);
             this.label2.TabIndex = 7;
@@ -99,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(548, 48);
+            this.label3.Location = new System.Drawing.Point(646, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 17);
             this.label3.TabIndex = 8;
@@ -108,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(407, 78);
+            this.label4.Location = new System.Drawing.Point(515, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 17);
             this.label4.TabIndex = 9;
@@ -116,7 +119,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(754, 12);
+            this.btnLogOut.Location = new System.Drawing.Point(1001, 16);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(92, 43);
             this.btnLogOut.TabIndex = 10;
@@ -126,7 +129,7 @@
             // 
             // btnSchoonmaakTerug
             // 
-            this.btnSchoonmaakTerug.Location = new System.Drawing.Point(792, 376);
+            this.btnSchoonmaakTerug.Location = new System.Drawing.Point(1029, 471);
             this.btnSchoonmaakTerug.Name = "btnSchoonmaakTerug";
             this.btnSchoonmaakTerug.Size = new System.Drawing.Size(54, 27);
             this.btnSchoonmaakTerug.TabIndex = 11;
@@ -135,11 +138,40 @@
             this.btnSchoonmaakTerug.Visible = false;
             this.btnSchoonmaakTerug.Click += new System.EventHandler(this.btnSchoonmaakTerug_Click);
             // 
+            // btnSchoonmaaklijstAanvragen
+            // 
+            this.btnSchoonmaaklijstAanvragen.Location = new System.Drawing.Point(454, 330);
+            this.btnSchoonmaaklijstAanvragen.Name = "btnSchoonmaaklijstAanvragen";
+            this.btnSchoonmaaklijstAanvragen.Size = new System.Drawing.Size(134, 65);
+            this.btnSchoonmaaklijstAanvragen.TabIndex = 12;
+            this.btnSchoonmaaklijstAanvragen.Text = "Schoonmaaklijst aanvragen";
+            this.btnSchoonmaaklijstAanvragen.UseVisualStyleBackColor = true;
+            this.btnSchoonmaaklijstAanvragen.Click += new System.EventHandler(this.btnSchoonmaaklijstAanvragen_Click);
+            // 
+            // tbTijdsindicatie
+            // 
+            this.tbTijdsindicatie.Location = new System.Drawing.Point(464, 201);
+            this.tbTijdsindicatie.Name = "tbTijdsindicatie";
+            this.tbTijdsindicatie.Size = new System.Drawing.Size(100, 22);
+            this.tbTijdsindicatie.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(429, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "duur schoonmaak in uur:";
+            // 
             // SchoonmaakForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 415);
+            this.ClientSize = new System.Drawing.Size(1105, 531);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbTijdsindicatie);
+            this.Controls.Add(this.btnSchoonmaaklijstAanvragen);
             this.Controls.Add(this.btnSchoonmaakTerug);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label4);
@@ -169,5 +201,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnSchoonmaakTerug;
+        private System.Windows.Forms.Button btnSchoonmaaklijstAanvragen;
+        private System.Windows.Forms.TextBox tbTijdsindicatie;
+        private System.Windows.Forms.Label label5;
     }
 }

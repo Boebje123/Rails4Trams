@@ -13,6 +13,6 @@ namespace Rails4Trams
         bool Update(Medewerker gebruiker);
         bool LogIn(string inlognaam, string wachtwoord);
         Medewerker GetGebruiker(string inlognaam);
-
+        Medewerker GetGebruiker(int id);
     }
 }

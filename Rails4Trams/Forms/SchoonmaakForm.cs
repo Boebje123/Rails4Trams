@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,21 +56,32 @@ namespace Rails4Trams
         }
         private void btnAfronden_Click(object sender, EventArgs e)
         {
-            if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
+            if (tbTijdsindicatie.Text == null)
             {
-              Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(3), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
+        if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
+            {
+              Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
 
         private void btnAfrondenGrote_Click(object sender, EventArgs e)
         {
-         
-            if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
+            if (tbTijdsindicatie.Text == null)
             {
-                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(6), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
+           if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
+            {
+                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
@@ -87,6 +99,50 @@ namespace Rails4Trams
             w.IngelogdeMedewerker = this.IngelogdeMedewerker;
             this.Hide();
             w.Show();
+        }
+
+        private void btnSchoonmaaklijstAanvragen_Click(object sender, EventArgs e)
+        {
+            List<Activiteit> schoonmaaklijst = activiteitRepo.VraagSchoonmaaklijstAan();
+            SaveFileDialog file;      
+
+            string actitiveit = "";
+
+            try
+            {
+                file = new SaveFileDialog();
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+
+                    using (StreamWriter sw = new StreamWriter(file.FileName))
+                        foreach (Activiteit a in schoonmaaklijst)
+                        {
+                            int i = a.ActiviteitiD;
+
+                            switch (i)
+                            {
+                                case 1:
+                                    actitiveit = "Grote schoonmaak";
+                                    break;
+                                case 2:
+                                    actitiveit = "Kleine Schoonmaak";
+                                    break;
+                            }
+                            sw.WriteLine("Voornaam Schoonmaker: " + a.medewerker.Voornaam);
+                            sw.WriteLine("Tram id: " + a.Tram.id);
+                            sw.WriteLine(actitiveit);
+                            sw.WriteLine("BeginTijd: " + a.BeginDatum);
+                            sw.WriteLine("EindTijd: " + a.EindDatum);
+                            sw.WriteLine(" ");
+                        }
+                }
+
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

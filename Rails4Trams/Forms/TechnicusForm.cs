@@ -56,20 +56,34 @@ namespace Rails4Trams
         }
         private void btnGroteDienstAfronden_Click(object sender, EventArgs e)
         {
-            if (lbGroteDienst.SelectedItem != null && IngelogdeMedewerker != null)
+            if (tbTijdsindicatie.Text == null)
             {
-                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(3), 3, IngelogdeMedewerker, lbGroteDienst.SelectedItem as Tram);
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
+        if (lbGroteDienst.SelectedItem != null && IngelogdeMedewerker != null)
+            {
+                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 3, IngelogdeMedewerker, lbGroteDienst.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
 
         private void btnKleineDienstAfronden_Click(object sender, EventArgs e)
         {
+            if (tbTijdsindicatie.Text == null)
+            {
+                MessageBox.Show("vul een tijdsindicatie in");
+            }
+            else
             if (lbKleineDienst.SelectedItem != null && IngelogdeMedewerker != null)
             {
-                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(3),4, IngelogdeMedewerker, lbKleineDienst.SelectedItem as Tram);
+              
+            
+                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 4, IngelogdeMedewerker, lbKleineDienst.SelectedItem as Tram);
                 activiteitRepo.Insert(a);
+                tramRepo.Update(a.Tram.id, 4);
             }
             UpdateForm();
         }
