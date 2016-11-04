@@ -8,14 +8,19 @@ namespace Rails4Trams
 {
    public class Sector
     {
-        public int Nummer { get; set; }
-        public int Lengte { get; set; }
+        public int id { get; set; }
         public bool Beschikbaar { get; set; }
+        public bool Blokkade { get; set; }
+        private Spoor spoor;
+        private Tram tram;
 
-        public Sector(int nummer,int lengte,bool beschikbaar)
+        
+        public Sector(int id,Tram tram,Spoor spoor,bool beschikbaar,bool blokkade)
         {
-            this.Nummer = nummer;
-            this.Lengte = lengte;
+            this.id = id;
+            this.tram = tram;
+            this.spoor = spoor;
+            this.Blokkade = blokkade;
             this.Beschikbaar = beschikbaar;
         }
     }

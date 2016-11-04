@@ -9,17 +9,18 @@ namespace Rails4Trams
   public  class Spoor
     {
        public int Lengte { get; set; }
-        public int Nummer { get; set; }
-        public bool Gereserveerd { get; set; }
-        private Sector Sector;
+        public int id { get; set; }
+        public bool Bezetting { get; set; }
+        public string Type { get; set; }
 
-        public Spoor(int lengte,int nummer,bool gereserveerd)
+        public Spoor(int id,string type,bool bezetting,int lengte)
         {
+            this.id = id;
             this.Lengte = lengte;
-            this.Nummer = nummer;
-            this.Gereserveerd = gereserveerd;
-            
+            this.Type = type;
+            this.Bezetting = bezetting;
+          
         }
-        
+        public Spoor() { }
     }
 }

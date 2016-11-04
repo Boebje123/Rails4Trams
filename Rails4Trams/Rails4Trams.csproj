@@ -62,12 +62,22 @@
     <Compile Include="Forms\OverzichtGebruikers.Designer.cs">
       <DependentUpon>OverzichtGebruikers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OverzichtTramsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OverzichtTramsForm.Designer.cs">
+      <DependentUpon>OverzichtTramsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Context\Database.cs" />
     <Compile Include="Logic\Context\IActiviteitContext.cs" />
     <Compile Include="Logic\Context\IMedewerker.cs" />
+    <Compile Include="Logic\Context\ISectorContext.cs" />
+    <Compile Include="Logic\Context\ISpoorContext.cs" />
     <Compile Include="Logic\Context\ITramContext.cs" />
     <Compile Include="Logic\Context\SqlActiviteitContext.cs" />
     <Compile Include="Logic\Context\SqlMedewerkerContext.cs" />
+    <Compile Include="Logic\Context\SqlSectorContext.cs" />
+    <Compile Include="Logic\Context\SqlSpoorContext.cs" />
     <Compile Include="Logic\Context\SqlTramContext.cs" />
     <Compile Include="Logic\SQLContext\ActiviteitRepository.cs" />
     <Compile Include="Logic\SQLContext\MedewerkerRepository.cs" />
@@ -77,6 +87,8 @@
     <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\SQLContext\SectorRepository.cs" />
+    <Compile Include="Logic\SQLContext\SpoorRepository.cs" />
     <Compile Include="Logic\SQLContext\TramRepository.cs" />
     <Compile Include="Models\Users\Beheerder.cs" />
     <Compile Include="Models\Users\Bestuurder.cs" />
@@ -125,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OverzichtGebruikers.resx">
       <DependentUpon>OverzichtGebruikers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OverzichtTramsForm.resx">
+      <DependentUpon>OverzichtTramsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

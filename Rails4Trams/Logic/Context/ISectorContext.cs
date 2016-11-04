@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Rails4Trams
 {
-   public interface ISpoorContext
+   public interface ISectorContext
     {
-        List<Spoor> Zoekspoor(Tram tram);
-        Spoor GetSpoor(int id);
+        List<Sector> ZoekVrijSector();
     }
 }

@@ -28,7 +28,7 @@ namespace Rails4Trams
             {
                 btnBestFormBack.Visible = true;
             }
-            StartRFID();
+          //  StartRFID();
         }
   
        public void StartRFID()
@@ -58,8 +58,8 @@ namespace Rails4Trams
 
         private void btnBestFormBack_Click(object sender, EventArgs e)
         {
-            RFID.Antenna = false;
-            RFID.close();
+          //  RFID.Antenna = false;
+         //   RFID.close();
             this.Hide();
             WagenparkBeheerderForm l = new WagenparkBeheerderForm(IngelogdeMedewerker);
             l.Show();
