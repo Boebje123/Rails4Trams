@@ -180,6 +180,7 @@ namespace Rails4Trams
             return false;
         }
 
+       
         private Tram CreateTramFromReader(SqlDataReader reader)
         {
             int typeid = Convert.ToInt32(reader["Typeid"]);

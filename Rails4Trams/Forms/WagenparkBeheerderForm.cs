@@ -38,7 +38,9 @@ namespace Rails4Trams
 
         private void btnOverzichtTrams_Click(object sender, EventArgs e)
         {
-
+            Forms.OverzichtTramsForm tramsForm = new Forms.OverzichtTramsForm(IngelogdeMedewerker);
+            this.Hide();
+            tramsForm.Show();
         }
 
         private void btnOverzichtSporen_Click(object sender, EventArgs e)

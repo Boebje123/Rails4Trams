@@ -14,12 +14,18 @@ namespace Rails4Trams.Forms
     {
         TramRepository tramRepo;
         Logic.SQLContext.SectorRepository sectorRepo;
+        SpoorRepository spoorrepo;
         List<Spoor> sporen;
-        public OverzichtTramsForm()
+       private Medewerker IngelogdeMedeweker;
+        public OverzichtTramsForm(Medewerker medewerker)
         {
+            this.IngelogdeMedeweker = medewerker;
             InitializeComponent();
             tramRepo = new TramRepository(new SqlTramContext());
             sectorRepo = new Logic.SQLContext.SectorRepository(new Logic.Context.SqlSectorContext());
+            spoorrepo = new SpoorRepository(new Logic.Context.SqlSpoorContext());
+            sporen = new List<Spoor>();
+            UpdateForm();
         }
 
         public void UpdateForm()
@@ -30,11 +36,13 @@ namespace Rails4Trams.Forms
             {
                 lbTrams.Items.Add(t);
             }
-         //   List<Spoor> sporen = sectorRepo.ZoekVrijSector(lbTrams.SelectedItem as Tram);
-            foreach (Spoor s in this.sporen)
+            this.sporen = spoorrepo.ZoekSpoor();
+            foreach (Spoor sp in this.sporen)
             {
-                cbVrijSpoor.Items.Add(s);
+                cbVrijSpoor.Items.Add(sp);
             }
+
+           
         }
 
         private void btnVeranderStatus_Click(object sender, EventArgs e)
@@ -64,6 +72,28 @@ namespace Rails4Trams.Forms
         private void lbTrams_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateForm();
+        }
+
+        private void cbVrijSpoor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Sector> sector = sectorRepo.ZoekVrijSector(cbVrijSpoor.SelectedItem as Spoor);
+            foreach (Sector s in sector)
+            {
+                cbVrijSector.Items.Add(s);
+            }
+        }
+
+        private void btnVerplaatsTram_Click(object sender, EventArgs e)
+        {
+            sectorRepo.VerplaatsTram(lbTrams.SelectedItem as Tram);
+
+        }
+
+        private void btnTerug_Click(object sender, EventArgs e)
+        {
+            WagenparkBeheerderForm wagenForm = new WagenparkBeheerderForm(IngelogdeMedeweker);
+            this.Hide();
+            wagenForm.Show();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Rails4Trams
 {
    public interface ISpoorContext
     {
-        List<Spoor> Zoekspoor(Tram tram);
+        List<Spoor> Zoekspoor();
         Spoor GetSpoor(int id);
     }
 }

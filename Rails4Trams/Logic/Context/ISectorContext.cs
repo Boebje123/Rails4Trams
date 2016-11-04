@@ -8,6 +8,7 @@ namespace Rails4Trams
 {
    public interface ISectorContext
     {
-        List<Sector> ZoekVrijSector();
+        List<Sector> ZoekVrijSector(Spoor Spoor);
+        void VerplaatsTram(Tram tram);
     }
 }

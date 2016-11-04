@@ -35,6 +35,9 @@
             this.cbVrijSpoor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbVrijSector = new System.Windows.Forms.ComboBox();
+            this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTrams
@@ -78,6 +81,7 @@
             this.btnVerplaatsTram.TabIndex = 3;
             this.btnVerplaatsTram.Text = "Rij tram naar spoor";
             this.btnVerplaatsTram.UseVisualStyleBackColor = true;
+            this.btnVerplaatsTram.Click += new System.EventHandler(this.btnVerplaatsTram_Click);
             // 
             // cbVrijSpoor
             // 
@@ -86,6 +90,7 @@
             this.cbVrijSpoor.Name = "cbVrijSpoor";
             this.cbVrijSpoor.Size = new System.Drawing.Size(180, 24);
             this.cbVrijSpoor.TabIndex = 4;
+            this.cbVrijSpoor.SelectedIndexChanged += new System.EventHandler(this.cbVrijSpoor_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -105,11 +110,41 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "vrij spoor:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(214, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "vrij sector";
+            // 
+            // cbVrijSector
+            // 
+            this.cbVrijSector.FormattingEnabled = true;
+            this.cbVrijSector.Location = new System.Drawing.Point(319, 325);
+            this.cbVrijSector.Name = "cbVrijSector";
+            this.cbVrijSector.Size = new System.Drawing.Size(180, 24);
+            this.cbVrijSector.TabIndex = 10;
+            // 
+            // btnTerug
+            // 
+            this.btnTerug.Location = new System.Drawing.Point(874, 57);
+            this.btnTerug.Name = "btnTerug";
+            this.btnTerug.Size = new System.Drawing.Size(75, 23);
+            this.btnTerug.TabIndex = 11;
+            this.btnTerug.Text = "Terug";
+            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.Click += new System.EventHandler(this.btnTerug_Click);
+            // 
             // OverzichtTramsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 523);
+            this.Controls.Add(this.btnTerug);
+            this.Controls.Add(this.cbVrijSector);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbVrijSpoor);
@@ -133,5 +168,8 @@
         private System.Windows.Forms.ComboBox cbVrijSpoor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbVrijSector;
+        private System.Windows.Forms.Button btnTerug;
     }
 }

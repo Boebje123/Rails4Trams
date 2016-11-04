@@ -31,9 +31,28 @@ namespace Rails4Trams.Logic.Context
             return ReturnSpoor;
         }
 
-        public List<Spoor> Zoekspoor(Tram tram)
+        public List<Spoor> Zoekspoor()
         {
-            throw new NotImplementedException();
+            List<Spoor> returnSporen = new List<Spoor>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM spoor Where bezetting =0";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            returnSporen.Add(CreateSpoorFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return returnSporen;
+
         }
 
         private Spoor CreateSpoorFromReader(SqlDataReader reader)

@@ -22,5 +22,10 @@ namespace Rails4Trams
           
         }
         public Spoor() { }
+
+        public override string ToString()
+        {
+            return Convert.ToString(this.id);
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace Rails4Trams
             this.context = context;
         }
 
-        public List<Spoor> ZoekSpoor(Tram tram)
+        public List<Spoor> ZoekSpoor()
         {
-            return context.Zoekspoor(tram);
+            return context.Zoekspoor();
         }
         public Spoor GetSpoor(int id)
         {

@@ -90,6 +90,7 @@
     <Compile Include="Logic\SQLContext\SectorRepository.cs" />
     <Compile Include="Logic\SQLContext\SpoorRepository.cs" />
     <Compile Include="Logic\SQLContext\TramRepository.cs" />
+    <Compile Include="Models\Trams\Lijn.cs" />
     <Compile Include="Models\Users\Beheerder.cs" />
     <Compile Include="Models\Users\Bestuurder.cs" />
     <Compile Include="Forms\BeheerderForm.cs">
