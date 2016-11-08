@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label lbNaarSpoor;
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnBestFormBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,18 +43,9 @@
             this.lbTramnr = new System.Windows.Forms.Label();
             this.lbSector = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            lbNaarSpoor = new System.Windows.Forms.Label();
+            this.lbNaarSpoor = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbNaarSpoor
-            // 
-            lbNaarSpoor.AutoSize = true;
-            lbNaarSpoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbNaarSpoor.Location = new System.Drawing.Point(200, 68);
-            lbNaarSpoor.Name = "lbNaarSpoor";
-            lbNaarSpoor.Size = new System.Drawing.Size(0, 29);
-            lbNaarSpoor.TabIndex = 9;
             // 
             // btnLogOut
             // 
@@ -213,14 +203,23 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "RFID";
             // 
+            // lbNaarSpoor
+            // 
+            this.lbNaarSpoor.AutoSize = true;
+            this.lbNaarSpoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNaarSpoor.Location = new System.Drawing.Point(200, 66);
+            this.lbNaarSpoor.Name = "lbNaarSpoor";
+            this.lbNaarSpoor.Size = new System.Drawing.Size(0, 29);
+            this.lbNaarSpoor.TabIndex = 12;
+            // 
             // BestuurderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 480);
+            this.Controls.Add(this.lbNaarSpoor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSector);
-            this.Controls.Add(lbNaarSpoor);
             this.Controls.Add(this.lbTramnr);
             this.Controls.Add(this.tbRFID);
             this.Controls.Add(this.groupBox1);
@@ -256,5 +255,6 @@
         private System.Windows.Forms.Label lbTramnr;
         private System.Windows.Forms.Label lbSector;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbNaarSpoor;
     }
 }

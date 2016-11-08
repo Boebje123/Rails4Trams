@@ -82,7 +82,6 @@
             this.btnInvoerTramNr = new System.Windows.Forms.Button();
             this.btnTestData = new System.Windows.Forms.Button();
             this.btnResetData = new System.Windows.Forms.Button();
-            this.lbInfo = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnTerugBeheerform = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
@@ -461,7 +460,11 @@
             // 
             // test
             // 
-
+            this.test.Location = new System.Drawing.Point(0, 0);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(75, 23);
+            this.test.TabIndex = 0;
+            // 
             // ExposableGroupBox
             // 
             this.ExposableGroupBox.Controls.Add(this.test);
@@ -500,15 +503,6 @@
             this.btnResetData.Text = "Reset data";
             this.btnResetData.UseVisualStyleBackColor = true;
             // 
-            // lbInfo
-            // 
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Location = new System.Drawing.Point(41, 37);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(46, 17);
-            this.lbInfo.TabIndex = 24;
-            this.lbInfo.Text = "label1";
-            // 
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(12, 188);
@@ -537,7 +531,6 @@
             this.ClientSize = new System.Drawing.Size(1546, 736);
             this.Controls.Add(this.btnTerugBeheerform);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.btnResetData);
             this.Controls.Add(this.btnTestData);
             this.Controls.Add(this.btnInvoerTramNr);
@@ -561,7 +554,6 @@
             this.ExposableGroupBox.ResumeLayout(false);
             this.ExposableGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -621,7 +613,6 @@
         private System.Windows.Forms.Button btnInvoerTramNr;
         private System.Windows.Forms.Button btnTestData;
         private System.Windows.Forms.Button btnResetData;
-        private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnTerugBeheerform;
     }

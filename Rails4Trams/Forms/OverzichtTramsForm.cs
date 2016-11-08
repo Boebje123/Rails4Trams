@@ -22,8 +22,8 @@ namespace Rails4Trams.Forms
             this.IngelogdeMedeweker = medewerker;
             InitializeComponent();
             tramRepo = new TramRepository(new SqlTramContext());
-            sectorRepo = new Logic.SQLContext.SectorRepository(new Logic.Context.SqlSectorContext());
-            spoorrepo = new SpoorRepository(new Logic.Context.SqlSpoorContext());
+            sectorRepo = new Logic.SQLContext.SectorRepository(new SqlSectorContext());
+            spoorrepo = new SpoorRepository(new SqlSpoorContext());
             sporen = new List<Spoor>();
             UpdateForm();
         }
@@ -71,6 +71,7 @@ namespace Rails4Trams.Forms
 
         private void lbTrams_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbVrijSpoor.Items.Clear();
             UpdateForm();
         }
 
@@ -85,7 +86,7 @@ namespace Rails4Trams.Forms
 
         private void btnVerplaatsTram_Click(object sender, EventArgs e)
         {
-            sectorRepo.VerplaatsTram(lbTrams.SelectedItem as Tram);
+            sectorRepo.VerplaatsTram(lbTrams.SelectedItem as Tram,cbVrijSpoor.SelectedItem as Spoor,cbVrijSector.SelectedItem as Sector);
 
         }
 

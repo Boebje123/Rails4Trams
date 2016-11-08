@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnVoegToe = new System.Windows.Forms.Button();
             this.btnVerwijder = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTerug = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbMedewerkers
@@ -160,22 +160,22 @@
             this.btnVerwijder.UseVisualStyleBackColor = true;
             this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
-            // button1
+            // btnTerug
             // 
-            this.button1.Location = new System.Drawing.Point(797, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTerug.Location = new System.Drawing.Point(781, 350);
+            this.btnTerug.Name = "btnTerug";
+            this.btnTerug.Size = new System.Drawing.Size(84, 32);
+            this.btnTerug.TabIndex = 13;
+            this.btnTerug.Text = "terug";
+            this.btnTerug.UseVisualStyleBackColor = true;
+            this.btnTerug.Click += new System.EventHandler(this.button1_Click);
             // 
             // OverzichtGebruikers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 491);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTerug);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.label5);
@@ -211,6 +211,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnVoegToe;
         private System.Windows.Forms.Button btnVerwijder;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTerug;
     }
 }

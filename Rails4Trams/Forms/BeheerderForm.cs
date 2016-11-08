@@ -23,17 +23,7 @@ namespace Rails4Trams
 
         //  RFID RFID = new RFID();
 
-        public string Welkomlabel
-        {
-            get
-            {
-                return this.lbInfo.Text;
-            }
-            set
-            {
-                this.lbInfo.Text = value;
-            }
-        }
+       
         public BeheerderForm(Medewerker ingelogdemedewerker)
         {
             this.IngelogdeMedewerker = ingelogdemedewerker;

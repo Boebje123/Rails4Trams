@@ -22,5 +22,13 @@ namespace Rails4Trams
         {
             return context.GetSpoor(id);
         }
+        public List<Spoor> GetAllSporen()
+        {
+            return context.AllSporen();
+        }
+        public bool UpdateSpoor(Spoor spoor,int status)
+        {
+            return context.UpdateSpoor(spoor,status);
+        }
     }
 }

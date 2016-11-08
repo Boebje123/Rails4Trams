@@ -16,10 +16,18 @@ namespace Rails4Trams
     {
         RFID RFID = new RFID();
         Medewerker IngelogdeMedewerker { get; set; }
+        List<Spoor> VrijeSporen;
+        List<Sector> VrijeSectoren;
+
         private TramRepository tramrepo;
+        private SpoorRepository spoorRepo;
+        private Logic.SQLContext.SectorRepository sectorRepo;
 
         public BestuurderForm(Medewerker medewerker)
         {
+            this.tramrepo = new TramRepository(new SqlTramContext());
+            spoorRepo = new SpoorRepository(new SqlSpoorContext());
+            sectorRepo = new Logic.SQLContext.SectorRepository(new SqlSectorContext());
             this.IngelogdeMedewerker = medewerker;
             InitializeComponent();
            
@@ -73,6 +81,10 @@ namespace Rails4Trams
             Tram t = tramrepo.GetTramWithRFID(tbRFID.Text);
             if (t != null)
                 lbTramnr.Text = t.id.ToString();
+           this.VrijeSporen= spoorRepo.ZoekSpoor();
+            this.VrijeSectoren = sectorRepo.ZoekVrijSector(VrijeSporen[0]);
+            lbSector.Text = VrijeSectoren[0].id.ToString();
+            lbNaarSpoor.Text = VrijeSporen[0].id.ToString();
         }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {

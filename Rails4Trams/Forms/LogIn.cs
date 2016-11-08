@@ -33,7 +33,6 @@ namespace Rails4Trams
                 if (InlogGebruiker is Beheerder)
                 {
                     BeheerForm = new BeheerderForm(InlogGebruiker);
-                    BeheerForm.Welkomlabel = InlogGebruiker.ToString();
                     BeheerForm.Show();
                 }
                 if (InlogGebruiker is Technicus)

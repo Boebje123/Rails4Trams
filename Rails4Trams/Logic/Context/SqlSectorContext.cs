@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rails4Trams.Logic.Context
+namespace Rails4Trams
 {
     public class SqlSectorContext : ISectorContext
     {
@@ -46,24 +46,45 @@ namespace Rails4Trams.Logic.Context
                     );
         }
 
-        public void VerplaatsTram(Tram tram)
+        public void VerplaatsTram(Tram tram,Spoor spoor,Sector sector)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "UPDATE sector SET spoorid= @spoorid,tramid =@tramid  WHERE tramid= @id";
+                string query = "UPDATE sector SET spoorid= @spoorid,tramid =@tramid  WHERE id = @sectorid";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("id",tram. id);
-                    command.Parameters.AddWithValue("status", tram.Status);
+                    command.Parameters.AddWithValue("sectorid",sector.id);
+                    command.Parameters.AddWithValue("spoorid", spoor.id);
+                    command.Parameters.AddWithValue("tramid", tram.id);
 
 
                     Convert.ToInt32(command.ExecuteNonQuery());
-                   //niet af
+            
                 }
             }
 
           
         }
 
+        public bool BlokkeerSector(Sector sector, int status)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE sector SET blokkade= @status  WHERE id= @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", sector.id);
+                    command.Parameters.AddWithValue("status", status);
+
+
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

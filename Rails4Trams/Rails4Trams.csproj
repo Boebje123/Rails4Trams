@@ -68,6 +68,12 @@
     <Compile Include="Forms\OverzichtTramsForm.Designer.cs">
       <DependentUpon>OverzichtTramsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SpoorOverzichtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpoorOverzichtForm.Designer.cs">
+      <DependentUpon>SpoorOverzichtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Context\Database.cs" />
     <Compile Include="Logic\Context\IActiviteitContext.cs" />
     <Compile Include="Logic\Context\IMedewerker.cs" />
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OverzichtTramsForm.resx">
       <DependentUpon>OverzichtTramsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpoorOverzichtForm.resx">
+      <DependentUpon>SpoorOverzichtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

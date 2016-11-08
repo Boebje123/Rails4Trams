@@ -45,7 +45,10 @@ namespace Rails4Trams
 
         private void btnOverzichtSporen_Click(object sender, EventArgs e)
         {
-
+            SpoorOverzichtForm s = new SpoorOverzichtForm(this.IngelogdeMedewerker);
+            this.Hide();
+            s.Show();
+           
         }
 
         private void btnBestuurSchema_Click(object sender, EventArgs e)
