@@ -23,7 +23,7 @@ namespace Rails4Trams
             this.Blokkade = blokkade;
             this.Beschikbaar = beschikbaar;
         }
-
+        public Sector() { }
         public override string ToString()
         {
             return Convert.ToString(id) + " status: " + this.Blokkade;

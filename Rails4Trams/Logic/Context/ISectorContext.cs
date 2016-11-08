@@ -9,7 +9,9 @@ namespace Rails4Trams
    public interface ISectorContext
     {
         List<Sector> ZoekVrijSector(Spoor Spoor);
-        void VerplaatsTram(Tram tram,Spoor spoor, Sector sector);
+        void TramInrijden(Tram tram,Spoor spoor, Sector sector);
+        void TramUitrijden(Sector sector);
         bool BlokkeerSector(Sector sector, int status);
+        Sector GetSector(int id);
     }
 }

@@ -134,7 +134,7 @@ namespace Rails4Trams
 
         private void btnInrijden_Click(object sender, EventArgs e)
         {
-
+            sectorRepo.VerplaatsTram(tramrepo.GetTram(Convert.ToInt16(lbTramnr.Text)), spoorRepo.GetSpoor(Convert.ToInt16(lbNaarSpoor.Text)), sectorRepo.GetSector(Convert.ToInt16(lbSector.Text)));
         }
     }
 }

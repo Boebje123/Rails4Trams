@@ -46,11 +46,12 @@ namespace Rails4Trams
                     );
         }
 
-        public void VerplaatsTram(Tram tram,Spoor spoor,Sector sector)
+        public void TramInrijden(Tram tram,Spoor spoor,Sector sector)
         {
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "UPDATE sector SET spoorid= @spoorid,tramid =@tramid  WHERE id = @sectorid";
+                        
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("sectorid",sector.id);
@@ -62,8 +63,23 @@ namespace Rails4Trams
             
                 }
             }
+        }
+        public void TramUitrijden(Sector sector)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE sector SET spoorid is null,tramid is null  WHERE id = @sectorid";
 
-          
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("sectorid", sector.id);
+       
+
+
+                    Convert.ToInt32(command.ExecuteNonQuery());
+
+                }
+            }
         }
 
         public bool BlokkeerSector(Sector sector, int status)
@@ -85,6 +101,28 @@ namespace Rails4Trams
             }
 
             return false;
+        }
+
+        public Sector GetSector(int id)
+        {
+            Sector ReturnSector = new Sector();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM Sector Where id = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ReturnSector = (CreateSectorFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return ReturnSector;
         }
     }
 }

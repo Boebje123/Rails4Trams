@@ -18,13 +18,21 @@ namespace Rails4Trams.Logic.SQLContext
         {
             return context.ZoekVrijSector(spoor);
         }
-        public void VerplaatsTram(Tram tram,Spoor spoor,Sector sector)
+        public void TramInrijden(Tram tram,Spoor spoor,Sector sector)
             {
-            context.VerplaatsTram(tram,spoor,sector);
+            context.TramInrijden(tram,spoor,sector);
             }
+        public void TramUitrijden(Sector sector)
+        {
+            context.TramUitrijden(sector);
+        }
         public bool UpdateSector(Sector sector, int status)
         {
             return context.BlokkeerSector(sector, status);
+        }
+        public Sector GetSector(int id)
+        {
+            return context.GetSector(id);
         }
 
     }
