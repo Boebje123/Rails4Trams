@@ -131,5 +131,10 @@ namespace Rails4Trams
         {
     
         }
+
+        private void btnInrijden_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

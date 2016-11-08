@@ -53,5 +53,11 @@ namespace Rails4Trams
             this.Hide();
             l.Show();
         }
+
+        private void btnTestData_Click(object sender, EventArgs e)
+        {
+            dgv38tm30.Rows[0].Cells[0].Value = 1;
+         
+        }
     }
 }

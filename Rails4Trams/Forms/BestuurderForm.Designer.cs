@@ -44,6 +44,7 @@
             this.lbSector = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbNaarSpoor = new System.Windows.Forms.Label();
+            this.btnInrijden = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,11 +213,22 @@
             this.lbNaarSpoor.Size = new System.Drawing.Size(0, 29);
             this.lbNaarSpoor.TabIndex = 12;
             // 
+            // btnInrijden
+            // 
+            this.btnInrijden.Location = new System.Drawing.Point(326, 340);
+            this.btnInrijden.Name = "btnInrijden";
+            this.btnInrijden.Size = new System.Drawing.Size(114, 40);
+            this.btnInrijden.TabIndex = 13;
+            this.btnInrijden.Text = "inrijden";
+            this.btnInrijden.UseVisualStyleBackColor = true;
+            this.btnInrijden.Click += new System.EventHandler(this.btnInrijden_Click);
+            // 
             // BestuurderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 480);
+            this.Controls.Add(this.btnInrijden);
             this.Controls.Add(this.lbNaarSpoor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbSector);
@@ -256,5 +268,6 @@
         private System.Windows.Forms.Label lbSector;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbNaarSpoor;
+        private System.Windows.Forms.Button btnInrijden;
     }
 }

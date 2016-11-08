@@ -460,14 +460,13 @@
             // 
             // test
             // 
-            this.test.Location = new System.Drawing.Point(0, 0);
+            this.test.Location = new System.Drawing.Point(925, 12);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(75, 23);
             this.test.TabIndex = 0;
             // 
             // ExposableGroupBox
             // 
-            this.ExposableGroupBox.Controls.Add(this.test);
             this.ExposableGroupBox.Controls.Add(this.textBox1);
             this.ExposableGroupBox.Location = new System.Drawing.Point(1095, 12);
             this.ExposableGroupBox.Name = "ExposableGroupBox";
@@ -493,6 +492,7 @@
             this.btnTestData.TabIndex = 22;
             this.btnTestData.Text = "Testdata invoeren";
             this.btnTestData.UseVisualStyleBackColor = true;
+            this.btnTestData.Click += new System.EventHandler(this.btnTestData_Click);
             // 
             // btnResetData
             // 
@@ -529,6 +529,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1546, 736);
+            this.Controls.Add(this.test);
             this.Controls.Add(this.btnTerugBeheerform);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnResetData);
