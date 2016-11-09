@@ -12,7 +12,7 @@ using Phidgets;
 
 namespace Rails4Trams
 {
-   
+
     public partial class BeheerderForm : Form
     {
 
@@ -45,10 +45,10 @@ namespace Rails4Trams
                 btnTerugBeheerform.Visible = true;
             }
             UpdateForm();
-         
+
 
         }
-      public void UpdateForm()
+        public void UpdateForm()
         {
             cbAlleSectoren.Items.Clear();
             cbTram.Items.Clear();
@@ -56,15 +56,15 @@ namespace Rails4Trams
             this.trams = tramRepo.GetAllTrams();
             this.sporen = spoorRepo.ZoekSpoor();
             this.sectoren = sectorRepo.GetAllSectoren();
-            foreach(Spoor s in this.sporen)
+            foreach (Spoor s in this.sporen)
             {
                 cbSpoor.Items.Add(s);
             }
-            foreach(Tram t in this.trams)
+            foreach (Tram t in this.trams)
             {
                 cbTram.Items.Add(t);
             }
-            foreach(Sector s in this.sectoren)
+            foreach (Sector s in this.sectoren)
             {
                 cbAlleSectoren.Items.Add(s);
             }
@@ -73,7 +73,7 @@ namespace Rails4Trams
         {
             cbSector.Items.Clear();
             this.vrijsectoren = sectorRepo.ZoekVrijSector(cbSpoor.SelectedItem as Spoor);
-            foreach(Sector s in this.vrijsectoren)
+            foreach (Sector s in this.vrijsectoren)
             {
                 cbSector.Items.Add(s);
             }
@@ -96,8 +96,8 @@ namespace Rails4Trams
         private void btnTestData_Click(object sender, EventArgs e)
         {
             Simulatie();
-           
-         
+
+
         }
         public void simulatietestTot44(int i)
         {
@@ -108,7 +108,7 @@ namespace Rails4Trams
                     int cellid = 0;
                     switch (s.spoor.id)
                     {
-                       
+
                         case 41:
                             cellid = 0;
                             break;
@@ -128,12 +128,12 @@ namespace Rails4Trams
                         dvg40tm44.Rows[s.rowNumber - 1].Cells[cellid].Value = " ";
                     }
 
-                  if (s.tram != null && s.tram.id == t.id&&s.spoor.id == i)
+                    if (s.tram != null && s.tram.id == t.id && s.spoor.id == i)
                     {
                         dvg40tm44.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
 
                     }
-               if (s.Blokkade)
+                    if (s.Blokkade)
                     {
                         dvg40tm44.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
                     }
@@ -176,7 +176,7 @@ namespace Rails4Trams
         }
         public void simulatietestTot30(int i)
         {
-          
+
 
             foreach (Tram t in this.trams)
             {
@@ -191,10 +191,10 @@ namespace Rails4Trams
                         case 37:
                             cellid = 1;
                             break;
-                        case 36:                       
+                        case 36:
                             cellid = 2;
                             break;
-                        case 35:            
+                        case 35:
                             cellid = 3;
                             break;
                         case 34:
@@ -213,8 +213,8 @@ namespace Rails4Trams
                             cellid = 8;
                             break;
                     }
-                    if (s.tram == null && s.spoor.id == i&&s.Blokkade == false)
-                    {                      
+                    if (s.tram == null && s.spoor.id == i && s.Blokkade == false)
+                    {
                         dgv38tm30.Rows[s.rowNumber - 1].Cells[cellid].Value = "";
                     }
 
@@ -223,7 +223,7 @@ namespace Rails4Trams
                         dgv38tm30.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
 
                     }
-                    else if (s.Blokkade== true)
+                    else if (s.Blokkade == true)
                     {
                         dgv38tm30.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
                     }
@@ -261,17 +261,30 @@ namespace Rails4Trams
             Tram inrijdtram = cbTram.SelectedItem as Tram;
             Spoor inrijdspoor = cbSpoor.SelectedItem as Spoor;
             Sector inrijdsector = cbSector.SelectedItem as Sector;
-            if(inrijdsector!=null && inrijdspoor !=null && inrijdtram != null)
+
+
+            if (inrijdsector != null && inrijdspoor != null && inrijdtram != null)
             {
-                sectorRepo.TramInrijden(inrijdtram, inrijdspoor, inrijdsector);
-                UpdateForm();
-                Simulatie();
+                if (sectorRepo.CheckTram(inrijdtram) == false)
+                {
+                    sectorRepo.TramInrijden(inrijdtram, inrijdspoor, inrijdsector);
+                    UpdateForm();
+                    Simulatie();
+                }
+                else
+                {
+                    MessageBox.Show("deze tram moet eerst uitgereden worden");
+                }
             }
-       else
+            else
             {
                 MessageBox.Show("Vul alle gegevens in");
             }
         }
+
+
+
+
 
         private void BeheerderForm_Load(object sender, EventArgs e)
         {
@@ -286,7 +299,7 @@ namespace Rails4Trams
         private void btnTramUitrijden_Click(object sender, EventArgs e)
         {
             Tram uitrijdtram = cbTram.SelectedItem as Tram;
-              if(uitrijdtram !=null)
+            if (uitrijdtram != null)
             {
                 sectorRepo.TramUitrijden(sectorRepo.GetSector(cbTram.SelectedItem as Tram));
                 UpdateForm();

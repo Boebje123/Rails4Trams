@@ -183,5 +183,31 @@ namespace Rails4Trams
             }
             return ReturnSector;
         }
+
+        public bool CheckTram(Tram tram)
+        {
+            List<Sector> returnSectoren = new List<Sector>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select * from sector where tramid = @tramid";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("tramid", tram.id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            returnSectoren.Add(CreateSectorFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            if (returnSectoren.Count > 0)
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

@@ -42,6 +42,10 @@ namespace Rails4Trams.Logic.SQLContext
         {
             return context.GetSector(tram);
         }
+        public bool CheckTram(Tram tram)
+        {
+            return context.CheckTram(tram);
+        }
 
     }
 }

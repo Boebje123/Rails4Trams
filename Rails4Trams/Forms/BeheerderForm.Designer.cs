@@ -59,23 +59,8 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvg12tm21 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.test = new System.Windows.Forms.Button();
-            this.ExposableGroupBox = new System.Windows.Forms.GroupBox();
             this.btnInvoerTramNr = new System.Windows.Forms.Button();
             this.btnTestData = new System.Windows.Forms.Button();
-            this.btnResetData = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnTerugBeheerform = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,8 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dvg40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg12tm21)).BeginInit();
-            this.ExposableGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv38tm30
@@ -342,110 +325,6 @@
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.Width = 50;
             // 
-            // dvg12tm21
-            // 
-            this.dvg12tm21.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvg12tm21.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column22,
-            this.Column20,
-            this.Column21});
-            this.dvg12tm21.Location = new System.Drawing.Point(183, 615);
-            this.dvg12tm21.Name = "dvg12tm21";
-            this.dvg12tm21.RowTemplate.Height = 24;
-            this.dvg12tm21.Size = new System.Drawing.Size(724, 94);
-            this.dvg12tm21.TabIndex = 17;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "12";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "13";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 50;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "14";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 50;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "15";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 50;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "16";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 50;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "17";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 50;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "19";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 50;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "18";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 50;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "20";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 50;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "21";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 50;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(87, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 22);
-            this.textBox1.TabIndex = 18;
-            // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(925, 12);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(75, 23);
-            this.test.TabIndex = 0;
-            // 
-            // ExposableGroupBox
-            // 
-            this.ExposableGroupBox.Controls.Add(this.textBox1);
-            this.ExposableGroupBox.Location = new System.Drawing.Point(1095, 12);
-            this.ExposableGroupBox.Name = "ExposableGroupBox";
-            this.ExposableGroupBox.Size = new System.Drawing.Size(417, 56);
-            this.ExposableGroupBox.TabIndex = 20;
-            this.ExposableGroupBox.TabStop = false;
-            this.ExposableGroupBox.Text = "Exposable";
-            // 
             // btnInvoerTramNr
             // 
             this.btnInvoerTramNr.Location = new System.Drawing.Point(12, 275);
@@ -465,15 +344,6 @@
             this.btnTestData.Text = "Testdata invoeren";
             this.btnTestData.UseVisualStyleBackColor = true;
             this.btnTestData.Click += new System.EventHandler(this.btnTestData_Click);
-            // 
-            // btnResetData
-            // 
-            this.btnResetData.Location = new System.Drawing.Point(12, 74);
-            this.btnResetData.Name = "btnResetData";
-            this.btnResetData.Size = new System.Drawing.Size(150, 28);
-            this.btnResetData.TabIndex = 23;
-            this.btnResetData.Text = "Reset data";
-            this.btnResetData.UseVisualStyleBackColor = true;
             // 
             // btnLogOut
             // 
@@ -594,7 +464,7 @@
             this.btnBlokkeerSector.Name = "btnBlokkeerSector";
             this.btnBlokkeerSector.Size = new System.Drawing.Size(149, 32);
             this.btnBlokkeerSector.TabIndex = 34;
-            this.btnBlokkeerSector.Text = "blokkeer spoor";
+            this.btnBlokkeerSector.Text = "blokkeer sector";
             this.btnBlokkeerSector.UseVisualStyleBackColor = true;
             this.btnBlokkeerSector.Click += new System.EventHandler(this.btnBlokkeerSpoor_Click);
             // 
@@ -620,14 +490,10 @@
             this.Controls.Add(this.cbSector);
             this.Controls.Add(this.cbSpoor);
             this.Controls.Add(this.cbTram);
-            this.Controls.Add(this.test);
             this.Controls.Add(this.btnTerugBeheerform);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.btnResetData);
             this.Controls.Add(this.btnTestData);
             this.Controls.Add(this.btnInvoerTramNr);
-            this.Controls.Add(this.ExposableGroupBox);
-            this.Controls.Add(this.dvg12tm21);
             this.Controls.Add(this.dvg74tm77);
             this.Controls.Add(this.dvg57tm61);
             this.Controls.Add(this.dvg40);
@@ -643,9 +509,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dvg40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg12tm21)).EndInit();
-            this.ExposableGroupBox.ResumeLayout(false);
-            this.ExposableGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,23 +547,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridView dvg12tm21;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.GroupBox ExposableGroupBox;
         private System.Windows.Forms.Button btnInvoerTramNr;
         private System.Windows.Forms.Button btnTestData;
-        private System.Windows.Forms.Button btnResetData;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnTerugBeheerform;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
