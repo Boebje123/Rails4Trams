@@ -89,6 +89,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnTramUitrijden = new System.Windows.Forms.Button();
+            this.btnBlokkeerSector = new System.Windows.Forms.Button();
+            this.cbAlleSectoren = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg45)).BeginInit();
@@ -575,11 +578,42 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "sector";
             // 
+            // btnTramUitrijden
+            // 
+            this.btnTramUitrijden.Location = new System.Drawing.Point(13, 309);
+            this.btnTramUitrijden.Name = "btnTramUitrijden";
+            this.btnTramUitrijden.Size = new System.Drawing.Size(150, 35);
+            this.btnTramUitrijden.TabIndex = 33;
+            this.btnTramUitrijden.Text = "tram uitrijden";
+            this.btnTramUitrijden.UseVisualStyleBackColor = true;
+            this.btnTramUitrijden.Click += new System.EventHandler(this.btnTramUitrijden_Click);
+            // 
+            // btnBlokkeerSector
+            // 
+            this.btnBlokkeerSector.Location = new System.Drawing.Point(12, 391);
+            this.btnBlokkeerSector.Name = "btnBlokkeerSector";
+            this.btnBlokkeerSector.Size = new System.Drawing.Size(149, 32);
+            this.btnBlokkeerSector.TabIndex = 34;
+            this.btnBlokkeerSector.Text = "blokkeer spoor";
+            this.btnBlokkeerSector.UseVisualStyleBackColor = true;
+            this.btnBlokkeerSector.Click += new System.EventHandler(this.btnBlokkeerSpoor_Click);
+            // 
+            // cbAlleSectoren
+            // 
+            this.cbAlleSectoren.FormattingEnabled = true;
+            this.cbAlleSectoren.Location = new System.Drawing.Point(27, 360);
+            this.cbAlleSectoren.Name = "cbAlleSectoren";
+            this.cbAlleSectoren.Size = new System.Drawing.Size(121, 24);
+            this.cbAlleSectoren.TabIndex = 35;
+            // 
             // BeheerderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1546, 736);
+            this.Controls.Add(this.cbAlleSectoren);
+            this.Controls.Add(this.btnBlokkeerSector);
+            this.Controls.Add(this.btnTramUitrijden);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -680,6 +714,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTramUitrijden;
+        private System.Windows.Forms.Button btnBlokkeerSector;
+        private System.Windows.Forms.ComboBox cbAlleSectoren;
     }
 }
 

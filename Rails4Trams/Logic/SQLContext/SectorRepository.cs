@@ -38,6 +38,10 @@ namespace Rails4Trams.Logic.SQLContext
         {
             return context.GetSector(id);
         }
+        public Sector GetSector(Tram tram)
+        {
+            return context.GetSector(tram);
+        }
 
     }
 }

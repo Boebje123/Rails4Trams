@@ -15,7 +15,7 @@ namespace Rails4Trams
         public Tram tram { get; private set; }
         public int rowNumber { get; private set; }
 
-        public Sector(int id,Tram tram,Spoor spoor,bool beschikbaar,bool blokkade, int rownumber)
+        public Sector(int id,Tram tram,Spoor spoor, bool blokkade ,bool beschikbaar, int rownumber)
         {
             this.rowNumber = rownumber;
             this.id = id;
@@ -24,7 +24,7 @@ namespace Rails4Trams
             this.Blokkade = blokkade;
             this.Beschikbaar = beschikbaar;
         }
-        public Sector(int id,Spoor spoor, bool beschikbaar, bool blokkade, int rownumber)
+        public Sector(int id,Spoor spoor, bool blokkade, bool beschikbaar , int rownumber)
         {
             this.rowNumber = rownumber;
             this.id = id;

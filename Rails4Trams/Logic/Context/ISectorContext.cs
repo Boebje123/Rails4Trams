@@ -14,5 +14,6 @@ namespace Rails4Trams
         void TramUitrijden(Sector sector);
         bool BlokkeerSector(Sector sector, int status);
         Sector GetSector(int id);
+        Sector GetSector(Tram tram);
     }
 }

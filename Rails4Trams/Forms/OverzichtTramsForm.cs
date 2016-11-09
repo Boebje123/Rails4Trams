@@ -16,9 +16,11 @@ namespace Rails4Trams.Forms
         Logic.SQLContext.SectorRepository sectorRepo;
         SpoorRepository spoorrepo;
         List<Spoor> sporen;
+       
        private Medewerker IngelogdeMedeweker;
         public OverzichtTramsForm(Medewerker medewerker)
         {
+        
             this.IngelogdeMedeweker = medewerker;
             InitializeComponent();
             tramRepo = new TramRepository(new SqlTramContext());
@@ -33,10 +35,12 @@ namespace Rails4Trams.Forms
             lbTrams.Items.Clear();
             cbVrijSpoor.Items.Clear();
             List<Tram> trams = tramRepo.GetAllTrams();
-            foreach(Tram t in trams)
+           
+            foreach (Tram t in trams)
             {
                 lbTrams.Items.Add(t);
             }
+     
             foreach (Spoor sp in this.sporen)
             {
                 cbVrijSpoor.Items.Add(sp);

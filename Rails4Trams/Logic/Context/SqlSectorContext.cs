@@ -106,7 +106,7 @@ namespace Rails4Trams
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "UPDATE sector SET tramid is null  WHERE id = @sectorid";
+                string query = "UPDATE sector SET tramid = null  WHERE id = @sectorid";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -150,6 +150,27 @@ namespace Rails4Trams
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ReturnSector = (CreateSectorFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return ReturnSector;
+        }
+        public Sector GetSector(Tram tram)
+        {
+            Sector ReturnSector = new Sector();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM Sector Where tramid = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", tram.id);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
