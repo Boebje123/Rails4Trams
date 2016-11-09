@@ -133,7 +133,7 @@ namespace Rails4Trams
                         dvg40tm44.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
 
                     }
-                    if (s.Blokkade)
+                    if (s.Blokkade && s.spoor.id == i)
                     {
                         dvg40tm44.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
                     }
@@ -166,7 +166,7 @@ namespace Rails4Trams
                         dvg40.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
 
                     }
-                    if (s.Blokkade)
+                    if (s.Blokkade && s.spoor.id == i)
                     {
                         dvg40.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
                     }
@@ -223,9 +223,108 @@ namespace Rails4Trams
                         dgv38tm30.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
 
                     }
-                    else if (s.Blokkade == true)
+                    else if (s.Blokkade == true && s.spoor.id == i)
                     {
                         dgv38tm30.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
+                    }
+                }
+            }
+
+        }
+        public void simulatietest51(int i)
+        {
+            foreach (Tram t in this.trams)
+            {
+                foreach (Sector s in this.sectoren)
+                {
+                    int cellid = 0;
+                    switch (s.spoor.id)
+                    {
+
+                        case 57:
+                            cellid = 0;
+                            break;
+
+                        case 56:
+                            cellid = 1;
+                            break;
+
+                        case 55:
+                            cellid = 2;
+                            break;
+
+                        case 54:
+                            cellid = 3;
+                            break;
+
+                        case 53:
+                            cellid = 4;
+                            break;
+
+                        case 52:
+                            cellid = 5;
+                            break;
+
+                        case 51:
+                            cellid = 6;
+                            break;
+
+                    }
+                    if (s.tram == null && s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = "";
+                    }
+
+                    if    (s.tram != null && s.tram.id == t.id && s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
+
+                    }
+                     if  (s.Blokkade&&s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
+                    }
+                }
+            }
+
+        }
+        public void simulatietest61(int i)
+        {
+            foreach (Tram t in this.trams)
+            {
+                foreach (Sector s in this.sectoren)
+                {
+                    int cellid = 0;
+                    switch (s.spoor.id)
+                    {
+
+                        case 64:
+                            cellid = 7;
+                            break;
+                        case 63:
+                            cellid = 8;
+                            break;
+                        case 62:
+                            cellid = 9;
+                            break;
+                        case 61:
+                            cellid = 10;
+                            break;
+
+                    }
+                    if (s.tram == null && s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = "";
+                    }
+
+                    if (s.tram != null && s.tram.id == t.id && s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = s.tram.id;
+
+                    }
+                   if (s.Blokkade && s.spoor.id == i)
+                    {
+                        dvg57tm61.Rows[s.rowNumber - 1].Cells[cellid].Value = "xxxxxxx";
                     }
                 }
             }
@@ -236,9 +335,12 @@ namespace Rails4Trams
             dgv38tm30.Rows.Clear();
             dvg40.Rows.Clear();
             dvg40tm44.Rows.Clear();
+            dvg57tm61.Rows.Clear();
+            dvg57tm61.Rows.Add(3);
             dgv38tm30.Rows.Add(3);
             dvg40tm44.Rows.Add(3);
             dvg40.Rows.Add(10);
+
             for (int i = 38; i >= 30; i--)
             {
                 simulatietestTot30(i);
@@ -249,10 +351,14 @@ namespace Rails4Trams
                 simulatietestTot44(i);
             }
             simulatietest40(40);
-            //for (int i = 57; i < 61; i++)
-            //{
-            //    simulatietest(i);
-            //}
+            for (int i = 57; i >= 51; i--)
+            {
+                simulatietest51(i);
+            }
+            for (int i = 64; i >= 61; i--)
+            {
+                simulatietest61(i);
+            }
 
         }
 

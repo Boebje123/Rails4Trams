@@ -39,8 +39,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvg40tm44 = new System.Windows.Forms.DataGridView();
-            this.dvg45 = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvg40 = new System.Windows.Forms.DataGridView();
             this.dvg57tm61 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +52,6 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvg74tm77 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInvoerTramNr = new System.Windows.Forms.Button();
             this.btnTestData = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -79,10 +72,8 @@
             this.cbAlleSectoren = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv38tm30
@@ -172,23 +163,6 @@
             this.dvg40tm44.Size = new System.Drawing.Size(392, 217);
             this.dvg40tm44.TabIndex = 12;
             // 
-            // dvg45
-            // 
-            this.dvg45.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvg45.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10});
-            this.dvg45.Location = new System.Drawing.Point(1387, 350);
-            this.dvg45.Name = "dvg45";
-            this.dvg45.RowTemplate.Height = 24;
-            this.dvg45.Size = new System.Drawing.Size(125, 217);
-            this.dvg45.TabIndex = 13;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "45";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 50;
-            // 
             // dvg40
             // 
             this.dvg40.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -197,7 +171,7 @@
             this.dvg40.Location = new System.Drawing.Point(1325, 86);
             this.dvg40.Name = "dvg40";
             this.dvg40.RowTemplate.Height = 24;
-            this.dvg40.Size = new System.Drawing.Size(125, 217);
+            this.dvg40.Size = new System.Drawing.Size(156, 217);
             this.dvg40.TabIndex = 14;
             // 
             // dvg57tm61
@@ -286,44 +260,6 @@
             this.Column13.HeaderText = "61";
             this.Column13.Name = "Column13";
             this.Column13.Width = 50;
-            // 
-            // dvg74tm77
-            // 
-            this.dvg74tm77.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvg74tm77.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
-            this.dvg74tm77.Location = new System.Drawing.Point(1020, 350);
-            this.dvg74tm77.Name = "dvg74tm77";
-            this.dvg74tm77.RowTemplate.Height = 24;
-            this.dvg74tm77.Size = new System.Drawing.Size(324, 217);
-            this.dvg74tm77.TabIndex = 16;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "74";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "75";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "76";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "77";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 50;
             // 
             // btnInvoerTramNr
             // 
@@ -494,10 +430,8 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnTestData);
             this.Controls.Add(this.btnInvoerTramNr);
-            this.Controls.Add(this.dvg74tm77);
             this.Controls.Add(this.dvg57tm61);
             this.Controls.Add(this.dvg40);
-            this.Controls.Add(this.dvg45);
             this.Controls.Add(this.dvg40tm44);
             this.Controls.Add(this.dgv38tm30);
             this.Name = "BeheerderForm";
@@ -505,10 +439,8 @@
             this.Load += new System.EventHandler(this.BeheerderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,8 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridView dvg40tm44;
-        private System.Windows.Forms.DataGridView dvg45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridView dvg40;
         private System.Windows.Forms.DataGridView dvg57tm61;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -542,11 +472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridView dvg74tm77;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.Button btnInvoerTramNr;
         private System.Windows.Forms.Button btnTestData;
         private System.Windows.Forms.Button btnLogOut;

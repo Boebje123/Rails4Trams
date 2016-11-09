@@ -96,8 +96,11 @@ namespace Rails4Trams.Forms
 
         private void btnVerplaatsTram_Click(object sender, EventArgs e)
         {
-            sectorRepo.TramInrijden(lbTrams.SelectedItem as Tram,cbVrijSpoor.SelectedItem as Spoor,cbVrijSector.SelectedItem as Sector);
-
+            if (sectorRepo.CheckTram(lbTrams.SelectedItem as Tram) == false)
+            {
+                sectorRepo.TramInrijden(lbTrams.SelectedItem as Tram, cbVrijSpoor.SelectedItem as Spoor, cbVrijSector.SelectedItem as Sector);
+            }
+            else MessageBox.Show("rijd deze tram eerst uit");
         }
 
         private void btnTerug_Click(object sender, EventArgs e)
