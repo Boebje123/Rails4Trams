@@ -50,5 +50,9 @@ namespace Rails4Trams
         {
             return tramContext.GetTramWithRFID(rfid);
         }
+        public List<Tram> GetTramsInSector(Spoor spoor)
+        {
+            return tramContext.GetTramsInSector(spoor);
+        }
     }
 }

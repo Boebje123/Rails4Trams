@@ -61,11 +61,18 @@ namespace Rails4Trams
                 MessageBox.Show("vul een tijdsindicatie in");
             }
             else
-        if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
-            {
-              Activiteit a= new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
-                activiteitRepo.Insert(a);
-                tramRepo.Update(a.Tram.id, 4);
+             if (lbKlein.SelectedItem != null && IngelogdeMedewerker != null)
+             {
+                if (activiteitRepo.CountTramsKleineSchoonmaak() > 10)
+                {
+                    MessageBox.Show("er zijn al 10 kleine schoonmaakbeurten aan de gang");
+                }
+                else
+                {
+                    Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 2, IngelogdeMedewerker, lbKlein.SelectedItem as Tram);
+                    activiteitRepo.Insert(a);
+                    tramRepo.Update(a.Tram.id, 4);
+                }
             }
             UpdateForm();
         }
@@ -79,9 +86,16 @@ namespace Rails4Trams
             else
            if (lbGroot.SelectedItem != null && IngelogdeMedewerker != null)
             {
-                Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
-                activiteitRepo.Insert(a);
-                tramRepo.Update(a.Tram.id, 4);
+                if (activiteitRepo.CountTramsGroteSchoonmaak() > 5)
+                {
+                    MessageBox.Show("er zijn al 5 grote schoonmaakbeurten aan de gang");
+                }
+                else
+                {
+                    Activiteit a = new Activiteit(DateTime.Now, DateTime.Now.AddHours(Convert.ToInt32(tbTijdsindicatie.Text)), 1, IngelogdeMedewerker, lbGroot.SelectedItem as Tram);
+                    activiteitRepo.Insert(a);
+                    tramRepo.Update(a.Tram.id, 4);
+                }
             }
             UpdateForm();
         }

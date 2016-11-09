@@ -25,7 +25,7 @@ namespace Rails4Trams
 
         public override string ToString()
         {
-            return Convert.ToString(this.id) + " status: "+this.Bezetting;
+            return Convert.ToString(this.id) + " geblokkeerd: "+this.Bezetting;
         }
     }
 }

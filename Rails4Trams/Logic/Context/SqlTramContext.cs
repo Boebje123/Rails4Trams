@@ -28,7 +28,26 @@ namespace Rails4Trams
             }
             return result;
         }
-
+        public List<Tram> GetTramsInSector(Spoor Spoor)
+        {
+            List<Tram> result = new List<Tram>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "  select * from tram where id in (select tramid from sector where spoorid =@spoor)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("Spoor", Spoor.id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateTramFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
         public Tram GetTram(int id)
         {
             Tram ReturnTram = new Tram();
@@ -229,5 +248,7 @@ namespace Rails4Trams
                     Convert.ToString(reader["rfid"])
                     );
         }
+
+        
     }
 }

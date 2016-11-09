@@ -11,12 +11,31 @@ namespace Rails4Trams
     {
         TramRepository tramrepo = new TramRepository(new SqlTramContext());
         SpoorRepository spoorrepo = new SpoorRepository(new SqlSpoorContext());
+        public List<Sector> GetAllSectoren()
+        {
+        List<Sector> result = new List<Sector>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Sector ORDER BY ID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateSectorFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result;
+    }
         public List<Sector> ZoekVrijSector(Spoor spoor)
         {
             List<Sector> returnSectoren = new List<Sector>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "Select * FROM sector Where spoorid = @spoorid and beschikbaarheid =0 and blokkade =0";
+                string query = "Select * FROM sector Where spoorid = @spoorid and tramid is null and beschikbaarheid =0 and blokkade =0";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("spoorid", spoor.id);
@@ -33,17 +52,36 @@ namespace Rails4Trams
             }
             return returnSectoren;
         }
+        
         private Sector CreateSectorFromReader(SqlDataReader reader)
         {
-            Tram t=tramrepo.GetTram(Convert.ToInt16(reader["tramid"]));
-
             Spoor s = spoorrepo.GetSpoor(Convert.ToInt16(reader["spoorid"]));
-            return new Sector(Convert.ToInt32(reader["id"]),
-                   t ,
-                   s,
-                    Convert.ToBoolean(reader["blokkade"]),
-                    Convert.ToBoolean(reader["beschikbaarheid"])
-                    );
+            try
+            {
+                Tram t = tramrepo.GetTram(Convert.ToInt16(reader["tramid"]));
+
+                return new Sector(Convert.ToInt32(reader["id"]),
+                 t,
+                 s,
+                  Convert.ToBoolean(reader["blokkade"]),
+                  Convert.ToBoolean(reader["beschikbaarheid"]),
+                  Convert.ToInt16(reader["rownumber"])
+                  );
+            }
+            catch
+            {
+
+                return new Sector(Convert.ToInt32(reader["id"]),
+                s,
+                 Convert.ToBoolean(reader["blokkade"]),
+                 Convert.ToBoolean(reader["beschikbaarheid"]),
+                  Convert.ToInt16(reader["rownumber"])
+                 );
+            }
+       
+         
+       
+          
         }
 
         public void TramInrijden(Tram tram,Spoor spoor,Sector sector)
@@ -68,7 +106,7 @@ namespace Rails4Trams
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "UPDATE sector SET spoorid is null,tramid is null  WHERE id = @sectorid";
+                string query = "UPDATE sector SET tramid is null  WHERE id = @sectorid";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

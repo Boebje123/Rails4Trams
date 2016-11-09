@@ -22,5 +22,21 @@ namespace Rails4Trams
         {
             return context.VraagSchoonmaaklijstAan();
         }
+        public int CountTramsKleineDienst()
+        {
+            return context.CountTramsKleineDienst();
+        }
+        public int CountTramsGroteDienst()
+        {
+            return context.CountTramsGroteDienst();
+        }
+        public int CountTramsKleineSchoonmaak()
+        {
+            return context.CountTramsKleineSchoonmaak();
+        }
+        public int CountTramsGroteSchoonmaak()
+        {
+            return context.CountTramsGroteSchoonmaak();
+        }
     }
 }

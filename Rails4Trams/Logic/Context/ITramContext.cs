@@ -13,9 +13,12 @@ namespace Rails4Trams
         List<Tram> GetTramsKleineSchoonmaak();
         List<Tram> GetTramsGroteDienst();
         List<Tram> GetTramsKleineDienst();
+
+
+
         Tram Insert(Tram tram);
         bool Update(int id, int status);
-        
+        List<Tram> GetTramsInSector(Spoor Spoor);
         Tram GetTram(int id);
         Tram GetTramWithRFID(string rfid);
     }

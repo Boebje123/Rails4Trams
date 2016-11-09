@@ -11,14 +11,23 @@ namespace Rails4Trams
         public int id { get; set; }
         public bool Beschikbaar { get; set; }
         public bool Blokkade { get; set; }
-        private Spoor spoor;
-        private Tram tram;
+        public Spoor spoor { get; private set; }
+        public Tram tram { get; private set; }
+        public int rowNumber { get; private set; }
 
-        
-        public Sector(int id,Tram tram,Spoor spoor,bool beschikbaar,bool blokkade)
+        public Sector(int id,Tram tram,Spoor spoor,bool beschikbaar,bool blokkade, int rownumber)
         {
+            this.rowNumber = rownumber;
             this.id = id;
             this.tram = tram;
+            this.spoor = spoor;
+            this.Blokkade = blokkade;
+            this.Beschikbaar = beschikbaar;
+        }
+        public Sector(int id,Spoor spoor, bool beschikbaar, bool blokkade, int rownumber)
+        {
+            this.rowNumber = rownumber;
+            this.id = id;
             this.spoor = spoor;
             this.Blokkade = blokkade;
             this.Beschikbaar = beschikbaar;
@@ -26,7 +35,7 @@ namespace Rails4Trams
         public Sector() { }
         public override string ToString()
         {
-            return Convert.ToString(id) + " status: " + this.Blokkade;
+            return Convert.ToString(id) + " geblokkeerd: " + this.Blokkade;
         }
     }
 }

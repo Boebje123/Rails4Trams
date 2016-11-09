@@ -96,7 +96,29 @@ namespace Rails4Trams
             return returnSporen;
 
         }
+        public List<Spoor> Zoekinrijdspoor()
+        {
+            List<Spoor> returnSporen = new List<Spoor>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Select * FROM spoor Where bezetting =0 and type = 'In-uitrijdspoor'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
 
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            returnSporen.Add(CreateSpoorFromReader(reader));
+
+                        }
+                    }
+                }
+            }
+            return returnSporen;
+
+        }
         private Spoor CreateSpoorFromReader(SqlDataReader reader)
         {
             

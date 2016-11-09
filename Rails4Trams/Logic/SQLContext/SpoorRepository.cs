@@ -18,6 +18,10 @@ namespace Rails4Trams
         {
             return context.Zoekspoor();
         }
+        public List<Spoor> ZoekinrijdSpoor()
+        {
+            return context.Zoekinrijdspoor();
+        }
         public Spoor GetSpoor(int id)
         {
             return context.GetSpoor(id);

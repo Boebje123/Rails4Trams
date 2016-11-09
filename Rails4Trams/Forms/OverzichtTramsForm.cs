@@ -31,18 +31,18 @@ namespace Rails4Trams.Forms
         public void UpdateForm()
         {
             lbTrams.Items.Clear();
+            cbVrijSpoor.Items.Clear();
             List<Tram> trams = tramRepo.GetAllTrams();
             foreach(Tram t in trams)
             {
                 lbTrams.Items.Add(t);
             }
-            this.sporen = spoorrepo.ZoekSpoor();
             foreach (Spoor sp in this.sporen)
             {
                 cbVrijSpoor.Items.Add(sp);
             }
 
-           
+
         }
 
         private void btnVeranderStatus_Click(object sender, EventArgs e)
@@ -67,17 +67,23 @@ namespace Rails4Trams.Forms
             Tram updateTram = lbTrams.SelectedItem as Tram;
             if (i != 0 && updateTram != null)
                 tramRepo.Update(updateTram.id, i);
+            UpdateForm();
         }
 
         private void lbTrams_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbVrijSpoor.Items.Clear();
-            UpdateForm();
+            this.sporen = spoorrepo.ZoekSpoor();
+            foreach (Spoor sp in this.sporen)
+            {
+                cbVrijSpoor.Items.Add(sp);
+            }
         }
 
         private void cbVrijSpoor_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Sector> sector = sectorRepo.ZoekVrijSector(cbVrijSpoor.SelectedItem as Spoor);
+            cbVrijSector.Items.Clear();
             foreach (Sector s in sector)
             {
                 cbVrijSector.Items.Add(s);
@@ -86,7 +92,7 @@ namespace Rails4Trams.Forms
 
         private void btnVerplaatsTram_Click(object sender, EventArgs e)
         {
-            sectorRepo.VerplaatsTram(lbTrams.SelectedItem as Tram,cbVrijSpoor.SelectedItem as Spoor,cbVrijSector.SelectedItem as Sector);
+            sectorRepo.TramInrijden(lbTrams.SelectedItem as Tram,cbVrijSpoor.SelectedItem as Spoor,cbVrijSector.SelectedItem as Sector);
 
         }
 

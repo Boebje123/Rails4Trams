@@ -18,6 +18,7 @@ namespace Rails4Trams
         Medewerker IngelogdeMedewerker { get; set; }
         List<Spoor> VrijeSporen;
         List<Sector> VrijeSectoren;
+        List<Spoor> VrijindrijdSpoor;
 
         private TramRepository tramrepo;
         private SpoorRepository spoorRepo;
@@ -81,10 +82,10 @@ namespace Rails4Trams
             Tram t = tramrepo.GetTramWithRFID(tbRFID.Text);
             if (t != null)
                 lbTramnr.Text = t.id.ToString();
-           this.VrijeSporen= spoorRepo.ZoekSpoor();
-            this.VrijeSectoren = sectorRepo.ZoekVrijSector(VrijeSporen[0]);
+            this.VrijindrijdSpoor= spoorRepo.ZoekinrijdSpoor();
+            this.VrijeSectoren = sectorRepo.ZoekVrijSector(VrijindrijdSpoor[0]);
             lbSector.Text = VrijeSectoren[0].id.ToString();
-            lbNaarSpoor.Text = VrijeSporen[0].id.ToString();
+            lbNaarSpoor.Text = VrijindrijdSpoor[0].id.ToString();
         }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
@@ -134,7 +135,12 @@ namespace Rails4Trams
 
         private void btnInrijden_Click(object sender, EventArgs e)
         {
-            sectorRepo.VerplaatsTram(tramrepo.GetTram(Convert.ToInt16(lbTramnr.Text)), spoorRepo.GetSpoor(Convert.ToInt16(lbNaarSpoor.Text)), sectorRepo.GetSector(Convert.ToInt16(lbSector.Text)));
+            sectorRepo.TramInrijden(tramrepo.GetTram(Convert.ToInt16(lbTramnr.Text)), spoorRepo.GetSpoor(Convert.ToInt16(lbNaarSpoor.Text)), sectorRepo.GetSector(Convert.ToInt16(lbSector.Text)));
+        }
+
+        private void btnUitrijden_Click(object sender, EventArgs e)
+        {
+      
         }
     }
 }

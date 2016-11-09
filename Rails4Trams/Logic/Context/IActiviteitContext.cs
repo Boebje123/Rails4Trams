@@ -10,5 +10,10 @@ namespace Rails4Trams
     {
         Activiteit Insert(Activiteit activiteit);
         List<Activiteit> VraagSchoonmaaklijstAan();
+
+        int CountTramsKleineDienst();
+        int CountTramsGroteDienst();
+        int CountTramsKleineSchoonmaak();
+        int CountTramsGroteSchoonmaak();
     }
 }

@@ -132,12 +132,12 @@
             // 
             // btnVerstuur
             // 
-            this.btnVerstuur.Location = new System.Drawing.Point(161, 113);
+            this.btnVerstuur.Location = new System.Drawing.Point(140, 119);
             this.btnVerstuur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerstuur.Name = "btnVerstuur";
-            this.btnVerstuur.Size = new System.Drawing.Size(84, 30);
+            this.btnVerstuur.Size = new System.Drawing.Size(121, 36);
             this.btnVerstuur.TabIndex = 9;
-            this.btnVerstuur.Text = "Verstuur";
+            this.btnVerstuur.Text = "Verstuur status";
             this.btnVerstuur.UseVisualStyleBackColor = true;
             this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
@@ -169,7 +169,7 @@
             // 
             // tbRFID
             // 
-            this.tbRFID.Location = new System.Drawing.Point(275, 242);
+            this.tbRFID.Location = new System.Drawing.Point(314, 242);
             this.tbRFID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.Size = new System.Drawing.Size(281, 22);
@@ -198,7 +198,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(179, 238);
+            this.label6.Location = new System.Drawing.Point(218, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 29);
             this.label6.TabIndex = 11;
@@ -215,7 +215,7 @@
             // 
             // btnInrijden
             // 
-            this.btnInrijden.Location = new System.Drawing.Point(326, 340);
+            this.btnInrijden.Location = new System.Drawing.Point(378, 309);
             this.btnInrijden.Name = "btnInrijden";
             this.btnInrijden.Size = new System.Drawing.Size(114, 40);
             this.btnInrijden.TabIndex = 13;

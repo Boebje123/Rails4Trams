@@ -14,6 +14,10 @@ namespace Rails4Trams.Logic.SQLContext
         {
             this.context = context;
         }
+        public List<Sector> GetAllSectoren()
+        {
+            return context.GetAllSectoren();
+        }
         public List<Sector> ZoekVrijSector(Spoor spoor)
         {
             return context.ZoekVrijSector(spoor);

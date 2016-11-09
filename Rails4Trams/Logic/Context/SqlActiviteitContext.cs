@@ -9,6 +9,86 @@ namespace Rails4Trams
 {
     public class SqlActiviteitContext : IActiviteitContext
     {
+        public int CountTramsGroteDienst()
+        {
+            List<Activiteit> result = new List<Activiteit>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select* from activiteit where activiteitid = 3 and DATEDIFF(d,begintijd,CURRENT_TIMESTAMP) < 1";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateActiviteitFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result.Count;
+        }
+
+        public int CountTramsGroteSchoonmaak()
+        {
+            List<Activiteit> result = new List<Activiteit>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select* from activiteit where activiteitid = 1 and DATEDIFF(d,begintijd,CURRENT_TIMESTAMP) < 1";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateActiviteitFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result.Count;
+        }
+
+        public int CountTramsKleineDienst()
+        {
+            List<Activiteit> result = new List<Activiteit>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select* from activiteit where activiteitid = 4 and DATEDIFF(d,begintijd,CURRENT_TIMESTAMP) < 1";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateActiviteitFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result.Count;
+        }
+
+        public int CountTramsKleineSchoonmaak()
+        {
+            List<Activiteit> result = new List<Activiteit>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select* from activiteit where activiteitid = 2 and DATEDIFF(d,begintijd,CURRENT_TIMESTAMP) < 1";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(CreateActiviteitFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return result.Count;
+        }
+
         public Activiteit Insert(Activiteit activiteit)
         {
             using (SqlConnection connection = Database.Connection)
