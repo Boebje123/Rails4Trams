@@ -41,8 +41,7 @@
             this.dvg40tm44 = new System.Windows.Forms.DataGridView();
             this.dvg45 = new System.Windows.Forms.DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvg58 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvg40 = new System.Windows.Forms.DataGridView();
             this.dvg57tm61 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,10 +82,17 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbTram = new System.Windows.Forms.ComboBox();
+            this.cbSpoor = new System.Windows.Forms.ComboBox();
+            this.cbSector = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg58)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvg40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg12tm21)).BeginInit();
@@ -197,22 +203,16 @@
             this.Column10.Name = "Column10";
             this.Column10.Width = 50;
             // 
-            // dvg58
+            // dvg40
             // 
-            this.dvg58.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvg58.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvg40.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvg40.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6});
-            this.dvg58.Location = new System.Drawing.Point(1325, 86);
-            this.dvg58.Name = "dvg58";
-            this.dvg58.RowTemplate.Height = 24;
-            this.dvg58.Size = new System.Drawing.Size(125, 217);
-            this.dvg58.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "58";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 50;
+            this.dvg40.Location = new System.Drawing.Point(1325, 86);
+            this.dvg40.Name = "dvg40";
+            this.dvg40.RowTemplate.Height = 24;
+            this.dvg40.Size = new System.Drawing.Size(125, 217);
+            this.dvg40.TabIndex = 14;
             // 
             // dvg57tm61
             // 
@@ -445,16 +445,17 @@
             // 
             // btnInvoerTramNr
             // 
-            this.btnInvoerTramNr.Location = new System.Drawing.Point(12, 86);
+            this.btnInvoerTramNr.Location = new System.Drawing.Point(12, 275);
             this.btnInvoerTramNr.Name = "btnInvoerTramNr";
             this.btnInvoerTramNr.Size = new System.Drawing.Size(150, 28);
             this.btnInvoerTramNr.TabIndex = 21;
-            this.btnInvoerTramNr.Text = "Invoer tramnummer";
+            this.btnInvoerTramNr.Text = "tram inrijden";
             this.btnInvoerTramNr.UseVisualStyleBackColor = true;
+            this.btnInvoerTramNr.Click += new System.EventHandler(this.btnInvoerTramNr_Click);
             // 
             // btnTestData
             // 
-            this.btnTestData.Location = new System.Drawing.Point(12, 120);
+            this.btnTestData.Location = new System.Drawing.Point(12, 40);
             this.btnTestData.Name = "btnTestData";
             this.btnTestData.Size = new System.Drawing.Size(150, 28);
             this.btnTestData.TabIndex = 22;
@@ -464,7 +465,7 @@
             // 
             // btnResetData
             // 
-            this.btnResetData.Location = new System.Drawing.Point(12, 154);
+            this.btnResetData.Location = new System.Drawing.Point(12, 74);
             this.btnResetData.Name = "btnResetData";
             this.btnResetData.Size = new System.Drawing.Size(150, 28);
             this.btnResetData.TabIndex = 23;
@@ -473,7 +474,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(12, 188);
+            this.btnLogOut.Location = new System.Drawing.Point(12, 449);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(150, 28);
             this.btnLogOut.TabIndex = 25;
@@ -483,7 +484,7 @@
             // 
             // btnTerugBeheerform
             // 
-            this.btnTerugBeheerform.Location = new System.Drawing.Point(12, 222);
+            this.btnTerugBeheerform.Location = new System.Drawing.Point(12, 483);
             this.btnTerugBeheerform.Name = "btnTerugBeheerform";
             this.btnTerugBeheerform.Size = new System.Drawing.Size(150, 28);
             this.btnTerugBeheerform.TabIndex = 26;
@@ -516,11 +517,75 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 50;
             // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "40";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // cbTram
+            // 
+            this.cbTram.FormattingEnabled = true;
+            this.cbTram.Location = new System.Drawing.Point(24, 129);
+            this.cbTram.Name = "cbTram";
+            this.cbTram.Size = new System.Drawing.Size(121, 24);
+            this.cbTram.TabIndex = 27;
+            // 
+            // cbSpoor
+            // 
+            this.cbSpoor.FormattingEnabled = true;
+            this.cbSpoor.Location = new System.Drawing.Point(24, 178);
+            this.cbSpoor.Name = "cbSpoor";
+            this.cbSpoor.Size = new System.Drawing.Size(121, 24);
+            this.cbSpoor.TabIndex = 28;
+            this.cbSpoor.SelectedIndexChanged += new System.EventHandler(this.cbSpoor_SelectedIndexChanged);
+            // 
+            // cbSector
+            // 
+            this.cbSector.FormattingEnabled = true;
+            this.cbSector.Location = new System.Drawing.Point(24, 230);
+            this.cbSector.Name = "cbSector";
+            this.cbSector.Size = new System.Drawing.Size(121, 24);
+            this.cbSector.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 17);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "tram";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "spoor";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 205);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "sector";
+            // 
             // BeheerderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1546, 736);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbSector);
+            this.Controls.Add(this.cbSpoor);
+            this.Controls.Add(this.cbTram);
             this.Controls.Add(this.test);
             this.Controls.Add(this.btnTerugBeheerform);
             this.Controls.Add(this.btnLogOut);
@@ -531,22 +596,24 @@
             this.Controls.Add(this.dvg12tm21);
             this.Controls.Add(this.dvg74tm77);
             this.Controls.Add(this.dvg57tm61);
-            this.Controls.Add(this.dvg58);
+            this.Controls.Add(this.dvg40);
             this.Controls.Add(this.dvg45);
             this.Controls.Add(this.dvg40tm44);
             this.Controls.Add(this.dgv38tm30);
             this.Name = "BeheerderForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.BeheerderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv38tm30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg40tm44)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvg58)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvg40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg57tm61)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg74tm77)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvg12tm21)).EndInit();
             this.ExposableGroupBox.ResumeLayout(false);
             this.ExposableGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -565,8 +632,7 @@
         private System.Windows.Forms.DataGridView dvg40tm44;
         private System.Windows.Forms.DataGridView dvg45;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridView dvg58;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView dvg40;
         private System.Windows.Forms.DataGridView dvg57tm61;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -607,6 +673,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.ComboBox cbTram;
+        private System.Windows.Forms.ComboBox cbSpoor;
+        private System.Windows.Forms.ComboBox cbSector;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
